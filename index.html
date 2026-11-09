@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KASTIC 2027 완전정복 · 중고등학생 준비 가이드</title>
+<meta name="description" content="KSEF 2027 KASTIC(Korea Adolescents Science & Technology Innovation Contest) 대회요강·일정·기간별 준비·과학프로젝트 작성법·과제수행 대비·참고 수상작을 한 페이지에 정리한 인터랙티브 가이드">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#141b34; --ink2:#3b4466; --muted:#6b7392; --line:#e3e6f0; --bg:#f6f7fb; --card:#fff;
+  --pri:#2b3a8f; --pri2:#4257d6; --acc:#e8524a; --acc2:#ff8a3d; --ok:#14a06b; --warn:#d98a00;
+  --soft:#eef1ff; --softr:#fff1ef; --softg:#e9f8f1; --softy:#fff7e6;
+  --r:16px; --sh:0 6px 24px rgba(20,27,52,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;font-size:16px;word-break:keep-all}
+a{color:var(--pri2)}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .6em}
+h2{font-size:1.75rem;letter-spacing:-.02em}
+h3{font-size:1.2rem}
+p{margin:.3em 0 .9em}
+small{color:var(--muted)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.logo{font-weight:800;letter-spacing:-.02em;color:var(--pri);white-space:nowrap;text-decoration:none;font-size:1.1rem}
+.logo b{color:var(--acc)}
+.menu{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1}
+.menu::-webkit-scrollbar{display:none}
+.menu a{white-space:nowrap;text-decoration:none;color:var(--ink2);font-size:.92rem;font-weight:600;padding:7px 11px;border-radius:999px}
+.menu a:hover,.menu a.on{background:var(--soft);color:var(--pri)}
+
+/* hero */
+header.hero{background:radial-gradient(1200px 400px at 85% -10%,#5b6cff55,transparent),linear-gradient(135deg,#17205a 0%,#2b3a8f 55%,#3a2f86 100%);color:#fff;padding:64px 0 54px;position:relative;overflow:hidden}
+header.hero:after{content:"";position:absolute;right:-80px;bottom:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.05)}
+.badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:4px 12px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,4.5vw,3.1rem);letter-spacing:-.03em;margin-bottom:.3em}
+.hero h1 em{font-style:normal;color:#ffb199}
+.hero p.lead{font-size:1.1rem;opacity:.92;max-width:760px}
+.dday{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:28px;position:relative;z-index:1}
+.dd{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px 16px}
+.dd .k{font-size:.82rem;opacity:.85}
+.dd .v{font-size:1.75rem;font-weight:800;letter-spacing:-.02em}
+.dd .d{font-size:.8rem;opacity:.75}
+.dd.now{background:#fff;color:var(--ink)}
+.dd.now .k,.dd.now .d{color:var(--muted);opacity:1}
+.dd.now .v{color:var(--acc)}
+.hero .cta{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:12px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:inherit;font-size:.95rem}
+.btn.w{background:#fff;color:var(--pri)}
+.btn.g{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn.p{background:var(--pri);color:#fff}
+.btn.o{background:#fff;color:var(--pri);border:1px solid var(--line)}
+.btn.sm{padding:6px 11px;font-size:.85rem;border-radius:9px}
+
+section{padding:56px 0 20px}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.sec-h .num{display:inline-block;font-size:.8rem;font-weight:800;color:var(--acc);letter-spacing:.08em;margin-bottom:4px}
+.sec-h p{color:var(--muted);margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:22px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--pri);margin:0 4px 4px 0}
+.tag.r{background:var(--softr);color:var(--acc)}
+.tag.g{background:var(--softg);color:var(--ok)}
+.tag.y{background:var(--softy);color:var(--warn)}
+.note{border-left:4px solid var(--pri2);background:var(--soft);padding:12px 16px;border-radius:10px;margin:12px 0}
+.note.r{border-color:var(--acc);background:var(--softr)}
+.note.y{border-color:var(--warn);background:var(--softy)}
+.note.g{border-color:var(--ok);background:var(--softg)}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f3f5fb;font-weight:700;color:var(--ink2)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+ul.clean{padding-left:1.1em;margin:.3em 0}
+ul.clean li{margin:.25em 0}
+.big{font-size:2rem;font-weight:800;color:var(--pri);letter-spacing:-.02em}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.kv:last-child{border:0}
+.kv b{color:var(--ink2);white-space:nowrap}
+
+/* tabs */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:999px;font-weight:700;color:var(--ink2);cursor:pointer;font-family:inherit;font-size:.92rem}
+.tabs button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.pane{display:none}.pane.on{display:block}
+
+/* timeline */
+.tl{position:relative;margin:10px 0 0;padding-left:28px}
+.tl:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--pri2),var(--acc));border-radius:3px}
+.tl .it{position:relative;margin-bottom:16px}
+.tl .it:before{content:"";position:absolute;left:-25px;top:8px;width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid var(--pri2)}
+.tl .it.done:before{background:var(--pri2)}
+.tl .it.next:before{border-color:var(--acc);box-shadow:0 0 0 5px #e8524a33}
+.tl .date{font-weight:800;color:var(--pri)}
+.tl .it.next .date{color:var(--acc)}
+.tl .it .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:4px}
+
+/* checklist */
+.phase{border:1px solid var(--line);border-radius:var(--r);background:#fff;margin-bottom:14px;overflow:hidden}
+.phase summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.phase summary::-webkit-details-marker{display:none}
+.phase .pn{flex:0 0 46px;height:46px;border-radius:12px;background:var(--soft);color:var(--pri);display:grid;place-items:center;font-weight:800}
+.phase.cur .pn{background:var(--acc);color:#fff}
+.phase .pt{flex:1}
+.phase .pt b{display:block;font-size:1.05rem}
+.phase .pt span{color:var(--muted);font-size:.9rem}
+.phase .pp{font-size:.85rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.bar{height:6px;background:#eef0f6;border-radius:6px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri2),var(--acc));width:0;transition:width .3s}
+.phase .body{padding:0 20px 18px 80px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line)}
+.chk:last-child{border:0}
+.chk input{margin-top:6px;width:18px;height:18px;accent-color:var(--pri);flex:0 0 auto}
+.chk label{cursor:pointer}
+.chk label b{display:block}
+.chk label span{display:block;color:var(--muted);font-size:.9rem}
+.chk input:checked+label b{text-decoration:line-through;color:var(--muted)}
+@media(max-width:640px){.phase .body{padding:0 16px 16px}}
+
+/* steps */
+.steps{counter-reset:s}
+.step{display:grid;grid-template-columns:52px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:12px}
+.step .sn{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--pri2),var(--pri));color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.2rem}
+.step h4{font-size:1.08rem;margin-bottom:.3em}
+.ex{background:#f8f9fd;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.93rem;margin:8px 0}
+.ex b{color:var(--pri)}
+.good{color:var(--ok);font-weight:700}.bad{color:var(--acc);font-weight:700}
+
+/* forms */
+input[type=text],input[type=number],textarea,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
+textarea{min-height:80px;resize:vertical}
+label.f{display:block;font-weight:700;font-size:.9rem;margin:10px 0 4px;color:var(--ink2)}
+.out{white-space:pre-wrap;background:#0f1530;color:#e7eaff;border-radius:12px;padding:16px;font-size:.88rem;line-height:1.65;max-height:460px;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+input[type=range]{width:100%;accent-color:var(--pri)}
+
+/* quiz */
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+.q .qt{font-weight:700;margin-bottom:8px}
+.q .opts{display:grid;gap:6px}
+.q .opts button{text-align:left;border:1px solid var(--line);background:#fafbff;padding:9px 12px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.93rem;color:var(--ink)}
+.q .opts button:hover{border-color:var(--pri2)}
+.q .opts button.right{background:var(--softg);border-color:var(--ok);font-weight:700}
+.q .opts button.wrong{background:var(--softr);border-color:var(--acc)}
+.q .exp{display:none;margin-top:10px;font-size:.92rem;background:var(--soft);padding:10px 12px;border-radius:10px}
+.q.ans .exp{display:block}
+
+/* field explorer */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chips button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-family:inherit;font-weight:600;cursor:pointer;font-size:.88rem;color:var(--ink2)}
+.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.fcard h4{margin-bottom:4px}
+.fcard .en{color:var(--muted);font-size:.85rem;font-weight:600}
+.fcard ul{padding-left:1.1em;margin:.4em 0 0;font-size:.92rem}
+
+.res{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.res .ic{flex:0 0 40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--soft);font-size:1.2rem}
+.res h4{margin:0 0 2px;font-size:1rem}
+.res p{margin:0;font-size:.9rem;color:var(--ink2)}
+
+details.faq{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;padding:0 16px}
+details.faq summary{cursor:pointer;font-weight:700;padding:13px 0}
+details.faq div{padding-bottom:14px;color:var(--ink2)}
+
+.score{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.score{grid-template-columns:1fr}}
+.gauge{font-size:2.6rem;font-weight:800;color:var(--pri)}
+footer{background:#10163a;color:#c9cdea;padding:36px 0;margin-top:56px;font-size:.9rem}
+footer a{color:#fff}
+.toTop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;background:var(--pri);color:#fff;border:0;font-size:1.2rem;cursor:pointer;box-shadow:var(--sh);display:none;z-index:40}
+.print-only{display:none}
+@media print{nav.top,.toTop,.hero .cta,.no-print{display:none!important}.pane{display:block!important}section{padding:16px 0}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="logo" href="#home">KASTIC<b>2027</b></a>
+    <div class="menu" id="menu">
+      <a href="#guide">대회요강</a>
+      <a href="#schedule">대회일정</a>
+      <a href="#roadmap">기간별 준비</a>
+      <a href="#project">과학프로젝트</a>
+      <a href="#tasks">과제수행 대비</a>
+      <a href="#fields">분야 탐색</a>
+      <a href="#practice">연습문제</a>
+      <a href="#archive">수상작·자료</a>
+      <a href="#score">점수 계산</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <span class="badge">KSEF 2027 · 제1회 KASTIC · CASTIC 2027 한국대표 선발전</span>
+    <h1>KASTIC, <em>따라만 하면</em><br>참가부터 본선까지 끝.</h1>
+    <p class="lead">KASTIC(Korea Adolescents Science &amp; Technology Innovation Contest)은 중국 CASTIC 한국대표단 4명을 뽑는 대회입니다. 공식 공고·대회요강·논문양식을 바탕으로 대회 규정, 일정, 기간별 할 일, 논문 쓰는 법, 현장 과제 대비법, 참고할 수상작을 한 페이지에 모았습니다.</p>
+    <div class="dday" id="dday"></div>
+    <div class="cta">
+      <a class="btn w" href="#roadmap">📋 내 준비 체크리스트</a>
+      <a class="btn g" href="http://www.ksef.or.kr/pc/notice/notice01.php" target="_blank" rel="noopener">공식 공지사항 ↗</a>
+      <a class="btn g" href="https://forms.gle/dD14j42sWrDDM5UP8" target="_blank" rel="noopener">참가 등록 폼 (11/23 오픈) ↗</a>
+    </div>
+  </div>
+</header>
+
+<!-- 1. 대회요강 -->
+<section id="guide">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">01 · 대회요강</span><h2>KASTIC이 뭔가요? 3분 요약</h2><p>출처: [KSEF 2027] KASTIC 대회 안내(2026.9.18) 및 붙임1 대회요강</p></div></div>
+
+    <div class="grid g4">
+      <div class="card"><small>참가 대상</small><div class="big">G9~G12</div><p>중3 ~ 고3 (2026학년도 기준)<br>한국 국적자 · 한국 국적 포함 이중국적자</p></div>
+      <div class="card"><small>참가 형태</small><div class="big">개인전</div><p>팀 참가 불가. 재학생·유학생·대안학교·홈스쿨링·검정고시·대입 준비생 모두 가능</p></div>
+      <div class="card"><small>총점</small><div class="big">300점</div><p>과학프로젝트 서면심사 100점 + 현장 과제수행 100점 × 2과제</p></div>
+      <div class="card"><small>선발</small><div class="big">상위 4명</div><p>CASTIC 2027 한국대표단 (2027년 7~8월, 중국 후베이성, 5박 6일)</p></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <h3>🧭 KASTIC은 두 단계로 평가합니다</h3>
+        <div class="kv"><b>① 과학프로젝트 (100점)</b><span>논문(10장 이내) + 발표자료(포스터 1장 또는 PPT 12장 이내)를 접수 때 제출 → 심사위원 3~5명이 <b>서면심사</b>. 발표심사 없음.</span></div>
+        <div class="kv"><b>② 과제수행 (200점)</b><span>본선 당일 4개 과목에서 1개씩 제공되는 과제 중 <b>2개 선택</b>, 120분 동안 현장 수행. 준비물은 대회측 제공.</span></div>
+        <div class="kv"><b>동점자</b><span>과제수행 점수가 높은 학생 우선</span></div>
+        <div class="note y" style="margin-bottom:0"><b>핵심 포인트</b> — 배점의 2/3가 <b>현장 과제수행</b>입니다. 논문은 “기본 점수 확보”, 과제수행은 “순위 결정”으로 생각하고 준비하세요.</div>
+      </div>
+      <div class="card">
+        <h3>🧪 현장 과제 4과목 · 5가지 과제 유형</h3>
+        <p><span class="tag">생물 / 사회과학</span><span class="tag">지구 / 우주과학</span><span class="tag">물리 / 화학</span><span class="tag">기술 / 공학</span></p>
+        <p><span class="tag r">실험 설계</span><span class="tag r">변인 통제</span><span class="tag r">데이터 분석</span><span class="tag r">가설 설정</span><span class="tag r">결론 도출</span></p>
+        <ul class="clean">
+          <li>출제 기준: <b>중학교 교육과정</b> 내용</li>
+          <li>난이도: 탐구과정(프로젝트)을 해 본 학생이면 수행할 수 있는 수준</li>
+          <li>과학 내용 + 과학 태도 + 과학 기능(탐구능력)을 함께 평가</li>
+          <li>작성에 필요한 모든 자료는 현장에서 제공</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:28px">KSEF 2027의 4개 분야 비교 — KASTIC은 어디에 있나요?</h3>
+    <div class="tbl">
+      <table>
+        <tr><th>분야</th><th>대상</th><th>방식</th><th>연계 국제대회</th></tr>
+        <tr><td><b>KSEF National (국내분야)</b></td><td>G5~G12, 한국 국적, 1~3인</td><td>대전 현장 PPT 발표 (7분 발표 + 8분 질의응답)</td><td>ISEF, EUCYS, GENIUS, TISF, I-FEST² 등 배정</td></tr>
+        <tr><td><b>KSEF International (국제분야)</b></td><td>G5~G12, 국적 무관, 1~3인</td><td>Zoom PPT 발표</td><td>연계 없음</td></tr>
+        <tr><td><b>GENIUS Olympiad Korea</b></td><td>카테고리별 상이</td><td>카테고리별 상이 (AI·Science는 National로 선발)</td><td>GENIUS Olympiad (미국)</td></tr>
+        <tr style="background:#fff8f6"><td><b>KASTIC</b> ⭐</td><td>G9~G12, 한국 국적, <b>개인</b></td><td>논문·발표자료 서면심사 + <b>현장 과제수행 120분</b></td><td><b>CASTIC (중국)</b> · 상위 4명</td></tr>
+      </table>
+    </div>
+    <div class="note">KSEF National(국내분야)과 KASTIC을 <b>동시에</b> 지원할 수 있습니다. National 참가자는 KASTIC 등록 시 등록비를 제외한 <b>심사비 220,000원만</b> 냅니다. 같은 연구로 두 대회를 준비하면 효율적이에요. (National은 대전에서 1/9~10, KASTIC 본선은 1/16로 날짜가 겹치지 않습니다.)</div>
+
+    <h3 style="margin-top:28px">시상 계획</h3>
+    <div class="grid g4">
+      <div class="card"><span class="tag r">전체 1등상 (Best Award)</span><p>상위 4명 → <b>CASTIC 2027 참가자격</b></p></div>
+      <div class="card"><span class="tag y">금상</span><p>참가자 수 비율 약 <b>10%</b></p></div>
+      <div class="card"><span class="tag">은상</span><p>약 <b>20%</b></p></div>
+      <div class="card"><span class="tag g">동상</span><p>약 <b>30%</b> · 이 외 장려상, 해외 기관 특별상</p></div>
+    </div>
+    <p><small>※ 해당 상급에 부합하는 작품이 없으면 심사위원회가 수상 비율을 조정할 수 있습니다. 국제과학대회 참가자는 국제대회 캠프에 반드시 참가해야 하며, 불참 시 자격이 제외될 수 있습니다.</small></p>
+
+    <h3 style="margin-top:28px">참가 등록 때 내야 하는 것 4가지</h3>
+    <div class="tbl">
+      <table>
+        <tr><th>#</th><th>제출물</th><th>형식</th><th>파일명 예시</th></tr>
+        <tr><td>01</td><td>참가자 정보·작품 내용 (등록 폼에 직접 입력)</td><td>구글폼</td><td>—</td></tr>
+        <tr><td>02</td><td>개인정보 제공 및 활용 동의서 (붙임2 작성 후 촬영/스캔)</td><td>jpg 또는 png</td><td><code>KASTIC_홍길동_동의서</code></td></tr>
+        <tr><td>03-1</td><td>과학논문 (국문 또는 영문, 10장 이내, <b>붙임3 논문양식 사용</b>)</td><td>pdf</td><td><code>KASTIC_홍길동_논문</code></td></tr>
+        <tr><td>03-2</td><td>발표자료 (포스터 1장 또는 PPT 12장 이내, 자유양식, 국문 또는 영문)</td><td>pdf</td><td><code>KASTIC_홍길동_발표자료</code></td></tr>
+        <tr><td>04</td><td>등록비 납입 증빙 (이체 확인 화면 캡처)</td><td>jpg 또는 png</td><td><code>KASTIC_홍길동_납입</code></td></tr>
+      </table>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="note r" style="margin:0"><b>등록비(심사비 포함) 1인 330,000원</b><br>KSEF National 참가자는 심사비 220,000원만. 대회 불참 시 심사비만 환불.<br>입금자명: <b>KASTIC+학생명</b> (예: KASTIC홍길동)<br><small>계좌는 공식 공고의 대회요강 7쪽에 있습니다(신한은행, 예금주 한국과학기술지원단). 입금 전 반드시 공식 공고에서 다시 확인하세요.</small></div>
+      <div class="note y" style="margin:0"><b>제출 후 수정 불가!</b><br>수정하려면 폼을 다시 제출하고 ksef@ksef.or.kr로 분과·학교명·학생명을 알리며 기존 접수자료 삭제를 요청해야 합니다. 누락·오기재·형식 불일치·파일 오류 책임은 제출자에게 있고, 허위 접수 시 이후 국내외 대회 참가 자격이 제외됩니다.</div>
+    </div>
+
+    <h3 style="margin-top:28px">대회 장소</h3>
+    <div class="card">
+      <b>KT 대전인재개발원 제2연수관 2층</b> (대전광역시 서구 갈마로 160) — 2층에서 등록<br>
+      <ul class="clean">
+        <li>서대전역 → 택시 약 15분(3.9km) · 대전역 → 택시 약 30분(7.2km)</li>
+        <li>대전복합터미널 40분 · 대전정부청사터미널 15분 · 대전서부터미널 20분</li>
+        <li>현장 등록 시 주차권 제공</li>
+      </ul>
+      <a class="btn o sm" href="https://map.naver.com/p/search/KT%20대전인재개발원" target="_blank" rel="noopener">네이버 지도에서 보기 ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 일정 -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">02 · 대회일정</span><h2>KASTIC 2027 공식 일정</h2><p>오늘 날짜에 맞춰 지난 일정·다음 일정이 자동 표시됩니다.</p></div>
+      <a class="btn o sm no-print" id="icsBtn" href="#">📅 일정 캘린더(.ics) 받기</a></div>
+    <div class="grid g2">
+      <div class="tl" id="timeline"></div>
+      <div>
+        <div class="card">
+          <h3>본선 당일(1/16 토) 세부 시간표</h3>
+          <div class="kv"><b>09:00 ~ 09:30</b><span>등록 (신분증 지참 권장)</span></div>
+          <div class="kv"><b>09:30 ~ 10:00</b><span>안내사항 전달 · 과제 선택</span></div>
+          <div class="kv"><b>10:00 ~ 12:00</b><span>과제수행 (2개 과제, 총 120분)</span></div>
+          <div class="note r" style="margin-bottom:0"><b>09:30까지 등록 완료 필수.</b> 대회 시작 후 도착하면 <b>실격</b>입니다. 대전 밖에서 온다면 전날 숙박 또는 첫 차를 강력 추천합니다.</div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3>CASTIC 2027 (선발 후)</h3>
+          <div class="kv"><b>시기</b><span>2027년 7~8월, 5박 6일</span></div>
+          <div class="kv"><b>장소</b><span>중국 후베이성</span></div>
+          <div class="kv"><b>주최</b><span>중국과학기술협회(CAST) 청소년과학기술센터(CYSC)</span></div>
+          <div class="kv"><b>방식</b><span>과학프로젝트(개별 심사, Special Award) + 과제수행(개인전 2종목, 단체전 1종목)</span></div>
+          <div class="kv"><b>참고 비용</b><span>2026 CASTIC 한국대표 참가경비 안내: 1인 300만원(등록비·항공료 등 포함). 2027년 금액은 별도 안내</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 로드맵 -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">03 · 기간별 준비사항</span><h2>지금부터 CASTIC까지, 단계별 체크리스트</h2><p>체크한 항목은 이 브라우저에 저장됩니다. 현재 시기에 해당하는 단계가 빨간색으로 표시돼요.</p></div>
+      <div class="no-print" style="display:flex;gap:8px"><button class="btn o sm" id="resetChk">체크 초기화</button><button class="btn o sm" onclick="window.print()">🖨 인쇄</button></div></div>
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;font-weight:700"><span>전체 진행률</span><span id="allPct">0%</span></div>
+      <div class="bar" style="height:10px"><i id="allBar"></i></div>
+    </div>
+    <div id="phases"></div>
+
+    <h3 style="margin-top:26px">⏰ 과제수행 집중 대비 3주 플랜 (12/23 ~ 1/15)</h3>
+    <p>등록을 마친 뒤 본선까지 약 3주. 하루 1~2시간 기준입니다. 4과목 중 <b>자신 있는 2과목 + 예비 1과목</b>을 정해 깊게 준비하세요(당일 과제를 보고 고르기 때문에 예비 과목이 안전장치가 됩니다).</p>
+    <div class="tbl">
+      <table>
+        <tr><th>주차</th><th>목표</th><th>매일 할 일</th><th>주말 미션</th></tr>
+        <tr><td><b>1주차</b><br>12/23~12/29</td><td>탐구 기능 5가지 완전 이해</td><td>• 아래 <a href="#tasks">과제 유형별 해법</a> 1개씩 정리<br>• <a href="#practice">연습문제</a> 풀고 오답 노트<br>• 중학 과학 교과서 해당 단원 복습 (주 과목 2개)</td><td>집에 있는 재료로 실험 1개 설계→수행→보고서 1장 (90분 타이머)</td></tr>
+        <tr><td><b>2주차</b><br>12/30~1/5</td><td>과목별 심화 + 데이터 다루기</td><td>• 표→그래프 그리기, 기울기·평균·오차 계산 연습<br>• 세부 분야(해부생리, 기상학, 광학, 로봇공학 등) 개념 카드 만들기<br>• Science Olympiad 기출(아래 자료) 1세트</td><td>1/5(화) 16:00 참가번호·세부일정 공지 확인 · 모의 과제 2개를 120분 안에 풀기</td></tr>
+        <tr><td><b>3주차</b><br>1/6~1/15</td><td>실전 감각 · 시간 관리</td><td>• 매일 모의 과제 1개 (60분 제한)<br>• 답안 템플릿(가설-변인-절차-결과-결론) 손으로 쓰기 반복<br>• 단위·유효숫자·그래프 축 이름 실수 점검</td><td>1/14 이동·숙소 확정, 1/15 준비물 챙기고 일찍 자기</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 과학프로젝트 -->
+<section id="project">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">04 · 과학프로젝트 따라하기</span><h2>논문 + 발표자료, 10단계로 완성하기</h2><p>서면심사만 있으므로 <b>글만 읽어도 연구가 완벽히 이해되도록</b> 쓰는 것이 핵심입니다.</p></div></div>
+
+    <div class="note g"><b>이미 연구한 게 있나요?</b> 다른 과학대회나 KSEF 국내/국제 대회에 냈던 작품도 출품할 수 있습니다(요강 Q&amp;A). 학교 R&amp;E, 과제연구, 동아리 탐구, 과학전람회 출품작을 KASTIC 양식으로 다시 다듬는 것이 가장 빠른 길이에요. 처음이라면 아래 1단계부터 시작하세요.</div>
+
+    <div class="steps">
+      <div class="step"><div class="sn">1</div><div>
+        <h4>관심사 → 질문으로 바꾸기 (1~2일)</h4>
+        <p>생활 속 “왜?”를 10개 적고, 그중 <b>직접 측정할 수 있는 것</b>을 고르세요. 아래 <a href="#fields">분야 탐색</a>의 주제 아이디어를 참고해도 좋습니다.</p>
+        <div class="ex"><span class="bad">✗ 넓은 질문</span> “미세플라스틱은 해로울까?”<br><span class="good">✓ 측정 가능한 질문</span> “세탁 온도(20·40·60℃)에 따라 폴리에스터 천에서 나오는 미세섬유 개수는 어떻게 달라질까?”</div>
+      </div></div>
+      <div class="step"><div class="sn">2</div><div>
+        <h4>선행연구 조사 (2~3일)</h4>
+        <p>RISS·KCI·Google Scholar에서 키워드 검색 → 비슷한 연구 3~5편을 읽고 “이미 알려진 것 / 아직 모르는 것”을 표로 정리합니다. 이 표가 논문의 <b>서론</b>이 됩니다.</p>
+        <ul class="clean"><li><a href="https://www.riss.kr" target="_blank" rel="noopener">RISS</a> · <a href="https://www.kci.go.kr" target="_blank" rel="noopener">KCI</a> · <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.sciencechallenge.or.kr/result/paper.hsc" target="_blank" rel="noopener">한화 사이언스 챌린지 수상작 PDF</a></li></ul>
+      </div></div>
+      <div class="step"><div class="sn">3</div><div>
+        <h4>가설 세우기</h4>
+        <p>“만약 <b>[독립변인]</b>을 <b>[바꾸면]</b>, <b>[종속변인]</b>이 <b>[어떻게 변할 것]</b>이다. 왜냐하면 <b>[과학적 근거]</b> 때문이다.”</p>
+        <div class="ex">만약 세탁 온도를 높이면 미세섬유 방출 개수가 증가할 것이다. 왜냐하면 온도가 높을수록 고분자 섬유가 유연해지고 마찰에 의한 파단이 쉬워지기 때문이다.</div>
+      </div></div>
+      <div class="step"><div class="sn">4</div><div>
+        <h4>변인 설계표 만들기</h4>
+        <div class="tbl"><table>
+          <tr><th>구분</th><th>뜻</th><th>예시</th></tr>
+          <tr><td>독립변인 (1개)</td><td>내가 일부러 바꾸는 것</td><td>세탁 온도 20/40/60℃</td></tr>
+          <tr><td>종속변인</td><td>측정하는 결과</td><td>필터에 걸린 섬유 개수(현미경 계수)</td></tr>
+          <tr><td>통제변인</td><td>똑같이 유지하는 것</td><td>천 크기·종류, 물 양, 세제 양, 교반 시간, 회전 속도</td></tr>
+          <tr><td>대조군</td><td>비교 기준</td><td>세제 없이 물만 / 교반 없이 담가두기</td></tr>
+        </table></div>
+      </div></div>
+      <div class="step"><div class="sn">5</div><div>
+        <h4>실험 절차 &amp; 반복 계획</h4>
+        <p>제3자가 그대로 따라 할 수 있도록 번호 매겨 쓰세요. 조건마다 <b>최소 3회 반복</b>(가능하면 5회)해서 평균과 표준편차를 구합니다. 사진을 꼭 남기세요(논문 그림으로 사용).</p>
+        <div class="note y" style="margin:6px 0 0">안전: 화학약품·전기·열원·생물 시료를 다룰 땐 지도교사와 함께. ISEF 계열 대회는 사람·척추동물·위험물질 연구에 사전 승인 규정이 있으니 처음부터 피하거나 확인하세요.</div>
+      </div></div>
+      <div class="step"><div class="sn">6</div><div>
+        <h4>데이터 수집 &amp; 분석</h4>
+        <ul class="clean">
+          <li>원자료(raw data)는 엑셀/구글시트에 날짜별로 그대로 기록</li>
+          <li>평균, 표준편차, (가능하면) t-검정·상관계수 계산 → 그래프에 <b>오차막대</b></li>
+          <li>그래프: 축 이름 + 단위, 범례, 제목 필수 (심사 기준에 “범례가 명확한가”가 있음)</li>
+          <li>예상과 다른 결과도 버리지 말고 <b>원인을 분석</b> → 고찰에서 큰 점수</li>
+        </ul>
+      </div></div>
+      <div class="step"><div class="sn">7</div><div>
+        <h4>논문 작성 — 공식 양식(붙임3) 그대로</h4>
+        <div class="tbl"><table>
+          <tr><th>항목</th><th>서식 규정</th></tr>
+          <tr><td>국문 제목</td><td>명조 14pt, 진하게, 가운데 정렬</td></tr>
+          <tr><td>저자·소속</td><td>돋움 10pt, 가운데 정렬 (예: 홍길동<sup>1*</sup>, <sup>1</sup>한국고등학교)</td></tr>
+          <tr><td>영문 제목</td><td>명조 14pt, 진하게, 가운데 정렬</td></tr>
+          <tr><td>영문 저자·소속</td><td>돋움 10pt, 가운데 (예: Kil-Dong Hong<sup>1*</sup>, <sup>1</sup>Hankook High School, Seoul, Korea)</td></tr>
+          <tr><td>요약(국문)</td><td>명조 9pt, 양쪽 정렬, <b>8줄 또는 500자 이내</b></td></tr>
+          <tr><td>Abstract(영문)</td><td>명조 9pt, 양쪽 정렬, <b>8줄 또는 200단어 이내</b></td></tr>
+          <tr><td>Key Words</td><td>명조 9pt, 영문, <b>5개 이내, 알파벳 순</b></td></tr>
+          <tr><td>본문</td><td>자유 형식, 전체 10페이지 이내</td></tr>
+          <tr><td>참고문헌</td><td>본문 인용 순서대로. 학술지: 저자, 표제, 학술지명, 권, 호, 쪽수, 발행연도 / 단행본: 저자, 서명, 쪽수, 발행소, 발행연도 / 웹: 저자, 인용제목, 출판사, 출판연도, 주소, 인용연월</td></tr>
+        </table></div>
+        <p style="margin-top:8px">본문 추천 구성: <b>Ⅰ. 서론</b>(연구 동기·선행연구·연구 목적) → <b>Ⅱ. 이론적 배경</b> → <b>Ⅲ. 연구 방법</b>(재료·변인·절차) → <b>Ⅳ. 결과</b>(표·그래프) → <b>Ⅴ. 고찰</b>(해석·한계·개선) → <b>Ⅵ. 결론</b> → 참고문헌. 아래 생성기로 뼈대를 바로 만들어 보세요.</p>
+      </div></div>
+      <div class="step"><div class="sn">8</div><div>
+        <h4>발표자료 만들기 (포스터 1장 또는 PPT 12장 이내)</h4>
+        <p>발표 심사는 없지만 심사위원이 <b>논문 다음에 보는 요약본</b>입니다. 한눈에 “문제-방법-결과-의의”가 보여야 해요.</p>
+        <div class="grid g2">
+          <div class="ex"><b>PPT 12장 추천 구성</b><br>1 제목 · 2 연구 동기 · 3 선행연구와 차별점 · 4 연구 목적·가설 · 5 이론 · 6 변인 설계 · 7 실험 장치·절차(사진) · 8~9 결과 그래프 · 10 고찰·한계 · 11 결론·기대효과 · 12 참고문헌</div>
+          <div class="ex"><b>포스터 1장 구성 (A0 세로 기준)</b><br>상단 제목·이름 → 좌측 열: 동기·목적·가설 → 가운데: 방법(사진·도식) → 우측: 결과 그래프·결론 → 하단: 참고문헌. 글자는 줄이고 그림을 60% 이상.</div>
+        </div>
+      </div></div>
+      <div class="step"><div class="sn">9</div><div>
+        <h4>셀프 채점 — KSEF 공식 심사기준으로 점검</h4>
+        <p>KASTIC 서면심사의 세부 기준은 공개되지 않았지만, 같은 KSEF 2027의 National 심사기준이 좋은 기준점입니다. 아래 <a href="#score">셀프 체크</a>에서 항목별로 점검하세요.</p>
+      </div></div>
+      <div class="step"><div class="sn">10</div><div>
+        <h4>PDF 변환 · 파일명 · 제출</h4>
+        <p>폰트가 깨지지 않게 <b>PDF로 내보낸 뒤 다른 기기에서 열어 확인</b>. 파일명 규칙(<code>KASTIC_이름_논문</code> 등)을 지키고, 마감일이 아닌 <b>12/19(토)까지</b> 제출하는 것을 목표로 하세요.</p>
+      </div></div>
+    </div>
+
+    <h3 style="margin-top:28px">🛠 논문 뼈대 자동 생성기</h3>
+    <div class="grid g2">
+      <div class="card">
+        <label class="f">연구 제목 (국문)</label><input type="text" id="pTitle" placeholder="예: 세탁 온도에 따른 폴리에스터 미세섬유 방출량 비교">
+        <label class="f">영문 제목</label><input type="text" id="pTitleEn" placeholder="e.g. Effect of Washing Temperature on Microfiber Release from Polyester">
+        <label class="f">이름 / 학교</label><input type="text" id="pName" placeholder="예: 홍길동 / 한국고등학교">
+        <label class="f">독립변인 (바꾸는 것)</label><input type="text" id="pIV" placeholder="예: 세탁 온도 (20, 40, 60℃)">
+        <label class="f">종속변인 (측정하는 것)</label><input type="text" id="pDV" placeholder="예: 방출된 미세섬유 개수">
+        <label class="f">통제변인 (같게 유지)</label><input type="text" id="pCV" placeholder="예: 천 크기, 물 양, 세제 양, 교반 시간">
+        <label class="f">가설의 과학적 근거</label><input type="text" id="pWhy" placeholder="예: 온도가 높을수록 섬유가 유연해져 마찰 파단이 쉬워진다">
+        <label class="f">Key Words (쉼표로, 5개 이내)</label><input type="text" id="pKW" placeholder="예: microfiber, polyester, washing, temperature">
+        <div style="margin-top:12px;display:flex;gap:8px"><button class="btn p" id="genBtn">뼈대 만들기</button><button class="btn o" id="copyBtn">복사</button></div>
+      </div>
+      <div><div class="out" id="pOut">왼쪽 칸을 채우고 [뼈대 만들기]를 누르세요.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. 과제수행 -->
+<section id="tasks">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">05 · 과제수행 대비</span><h2>200점짜리 현장 과제, 이렇게 푼다</h2><p>KASTIC 과제 유형 5가지와 CASTIC 2025 기출과제 분석</p></div></div>
+
+    <div class="tabs" id="ttabs">
+      <button class="on" data-t="t1">5가지 과제 유형 해법</button>
+      <button data-t="t2">CASTIC 기출 분석</button>
+      <button data-t="t3">120분 시간 전략</button>
+      <button data-t="t4">답안 템플릿</button>
+    </div>
+
+    <div class="pane on" id="t1">
+      <div class="grid g2">
+        <div class="card"><span class="tag r">유형 1</span><h3>실험 설계 (Experimental Design)</h3>
+          <p>주어진 재료로 질문에 답하는 실험을 직접 짜는 문제.</p>
+          <ul class="clean"><li>먼저 <b>질문을 한 문장</b>으로 다시 쓰기</li><li>재료 목록을 보고 “무엇을 바꿀 수 있고, 무엇을 잴 수 있나” 표시</li><li>독립변인은 <b>하나만</b>, 수준은 3~5단계</li><li>절차는 번호를 매겨 남이 그대로 따라 할 수 있게</li><li>반복 측정(3회 이상)과 대조군 반드시 명시</li></ul></div>
+        <div class="card"><span class="tag r">유형 2</span><h3>변인 통제 (Controlled Variable)</h3>
+          <p>실험에서 같게 유지해야 할 조건을 찾고, 통제하지 않은 실험의 문제점을 지적하는 문제.</p>
+          <ul class="clean"><li>“결과에 영향을 줄 수 있는데 내가 바꾸지 않는 것”을 전부 나열</li><li>각 통제변인을 <b>어떻게</b> 같게 유지할지(측정 도구·방법)까지 쓰기</li><li>잘못된 실험: “두 가지 이상이 동시에 바뀌었다”를 찾기</li></ul></div>
+        <div class="card"><span class="tag r">유형 3</span><h3>데이터 분석 (Data Analysis)</h3>
+          <p>표·그래프·이미지 데이터를 해석하고 계산하는 문제.</p>
+          <ul class="clean"><li>그래프: x축=독립변인, y축=종속변인, <b>축 이름+단위</b></li><li>경향(증가/감소/최댓값), 기울기, 평균, 범위, 이상값 찾기</li><li>“상관관계 ≠ 인과관계” 함정 주의</li><li>유효숫자·단위 환산 실수 점검</li></ul></div>
+        <div class="card"><span class="tag r">유형 4</span><h3>가설 설정 (Hypothesize)</h3>
+          <p>관찰한 현상에 대해 검증 가능한 가설을 세우는 문제.</p>
+          <ul class="clean"><li>“만약 ~하면 ~할 것이다, 왜냐하면 ~” 공식</li><li><b>측정 가능한 단어</b>로 쓰기 (“좋아진다” ✗ → “30초 동안 온도 하강 폭이 커진다” ✓)</li><li>귀무가설/대립가설을 쓰면 가산점 가능성</li></ul></div>
+        <div class="card"><span class="tag r">유형 5</span><h3>결론 도출 (Draw a Conclusion)</h3>
+          <p>결과를 근거로 가설을 지지/기각하고 의미를 설명하는 문제.</p>
+          <ul class="clean"><li>①결과 요약(숫자로) → ②가설 지지 여부 → ③과학적 이유 → ④한계 → ⑤개선/후속 실험</li><li>“증명했다” 대신 “지지한다/뒷받침한다”</li><li>오차 원인 2가지 이상 구체적으로</li></ul></div>
+        <div class="card" style="background:var(--soft)"><h3>📚 평가되는 3가지</h3>
+          <p><b>과학 내용</b> — 중학 과학 개념을 정확히 아는가<br><b>과학 기능</b> — 위 5가지 탐구 기능<br><b>과학 태도</b> — 안전, 정직한 기록, 끈기, 깔끔한 정리</p>
+          <p>준비물은 대회측이 제공합니다. 필기구·계산기 지참 여부는 1/5 세부일정 공지에서 꼭 확인하세요.</p></div>
+      </div>
+    </div>
+
+    <div class="pane" id="t2">
+      <div class="note">KASTIC 요강은 <b>CASTIC 2025 기출과제</b> 4개를 참고용으로 공개했습니다. CASTIC은 2025년(제39회)부터 작품 심사 위주에서 <b>현장 과학기술 도전과제</b> 방식으로 크게 바뀌었고, 2025년에는 개인 과제 7개·팀 과제 3개가 출제됐습니다. 지식 응용·실습 능력·창의적 사고·팀 협업을 평가합니다.</div>
+      <div class="grid g2">
+        <div class="card"><span class="tag">물리/화학</span><h3>소금물에 의한 냉각 (Cooling by Brine)</h3>
+          <p><b>핵심 개념:</b> 어는점 내림, 용해열, 열 이동, 비열</p>
+          <p><b>예상 활동:</b> 소금 농도(독립변인)에 따른 얼음물·용기의 최저 온도나 냉각 속도(종속변인) 측정 → 표·그래프 → 가장 효율적인 농도 결론</p>
+          <p><b>연습:</b> 집에서 얼음+소금 0/5/10/20 g으로 5분간 온도 변화 측정해 보기. 통제변인(얼음 양, 용기, 저어 주는 횟수)을 적는 연습.</p></div>
+        <div class="card"><span class="tag">기술/공학</span><h3>EI 로봇의 핵심 부품 조립</h3>
+          <p><b>핵심 개념:</b> 모터·센서·기어비·회로, 체화 지능(Embodied Intelligence) 로봇 구조</p>
+          <p><b>예상 활동:</b> 설명서/도면을 해석해 부품을 조립하고 동작을 테스트, 문제 해결 과정 기록</p>
+          <p><b>연습:</b> 아두이노·마이크로비트·레고 키트로 센서 1개+모터 1개 동작 만들기, 회로도 읽기, 기어비 계산.</p></div>
+        <div class="card"><span class="tag">기술/공학 · 정보</span><h3>이미지 데이터 처리 (Image Data Processing)</h3>
+          <p><b>핵심 개념:</b> 픽셀·RGB·명암, 필터·임계값, 개수 세기·면적 측정</p>
+          <p><b>예상 활동:</b> 이미지에서 특징을 추출해 수치 데이터로 바꾸고 분석</p>
+          <p><b>연습:</b> 무료 프로그램 <a href="https://imagej.net/ij/" target="_blank" rel="noopener">ImageJ</a>로 사진 속 세포·입자 개수 세기, 엑셀로 히스토그램 그리기.</p></div>
+        <div class="card"><span class="tag">지구/우주과학</span><h3>강한 잡음 속 약한 중력파 신호 탐지·식별</h3>
+          <p><b>핵심 개념:</b> 신호 대 잡음비(SNR), 평균화·필터링, 주파수, 템플릿 매칭, 중력파(블랙홀 병합 처프 신호)</p>
+          <p><b>예상 활동:</b> 잡음 섞인 시계열 그래프에서 신호 위치·특징을 찾아내고 근거 설명</p>
+          <p><b>연습:</b> <a href="https://gwosc.org" target="_blank" rel="noopener">GWOSC</a>(중력파 공개데이터센터) 교육자료 훑어보기, 엑셀로 사인파+난수 잡음 만들고 이동평균으로 신호 복원해 보기.</p></div>
+      </div>
+      <div class="card" style="margin-top:16px"><h3>CASTIC 2025 현장 과제 예시 (중국 언론 보도)</h3>
+        <ul class="clean"><li><b>전자 발광 직물 설계·제작</b> — 전자회로 지식을 바탕으로 빛나는 직물 만들기 (유연 전자)</li><li><b>운반 장치 설계·제작</b> — 산간 지역용 고효율·에너지 절약형 수직 엘리베이터 설계·제작</li><li>2026년(제40회, 시안)에는 핵심 재료로 호두를 주고 생물자원을 평가·활용하는 팀 과제 등이 출제되었고, 국제 참가자도 현장 팀 과제에 처음 함께 참여</li></ul>
+        <p><small>→ 공통점: “산업 현장의 실제 문제”를 주고 <b>직접 설계하고 측정하고 근거를 들어 결론</b>을 내게 합니다. 외워서 푸는 문제가 아닙니다.</small></p></div>
+    </div>
+
+    <div class="pane" id="t3">
+      <div class="grid g2">
+        <div class="card"><h3>⏱ 120분 배분 (2과제 기준)</h3>
+          <div class="kv"><b>0~10분</b><span>4개 과제 훑어보고 2개 선택 (자신 있는 과목 + 재료가 익숙한 과제)</span></div>
+          <div class="kv"><b>10~60분</b><span>과제 A: 읽기 5 → 계획 10 → 실험·측정 25 → 정리 10</span></div>
+          <div class="kv"><b>60~110분</b><span>과제 B: 같은 리듬</span></div>
+          <div class="kv"><b>110~120분</b><span>빈칸 채우기 · 단위/축 이름/이름 기재 확인</span></div>
+          <div class="note y" style="margin-bottom:0">한 과제가 막히면 15분 이상 붙잡지 말고 다른 과제로 넘어갔다 돌아오세요. 부분 점수가 큽니다.</div></div>
+        <div class="card"><h3>🎯 과제 고르는 기준</h3>
+          <ul class="clean"><li>“무엇을 측정하라는지” 바로 보이는 과제 우선</li><li>장비 조작 경험이 있는 과제 (예: 온도계·저울·멀티미터)</li><li>계산이 많은 과제는 계산기 유무 확인 후 선택</li><li>내 예비 과목을 미리 정해 두면 당황하지 않음</li></ul>
+          <h3 style="margin-top:12px">🎒 당일 준비물(권장)</h3>
+          <ul class="clean"><li>신분증(학생증·여권) · 수험 관련 안내 문자</li><li>검정 볼펜 2, 샤프, 지우개, 30cm 자, 공학용 계산기(허용 여부 확인)</li><li>손목시계(아날로그), 물·간식</li></ul></div>
+      </div>
+    </div>
+
+    <div class="pane" id="t4">
+      <div class="card"><h3>📝 어떤 과제에도 쓰는 답안 틀 (외워 두기)</h3>
+<div class="out" style="background:#fff;color:var(--ink);border:1px solid var(--line)">1. 탐구 문제 : ______에 따라 ______은 어떻게 달라지는가?
+2. 가설      : 만약 ______하면 ______할 것이다. 왜냐하면 ______ 때문이다.
+3. 변인
+   - 독립변인 : ______ (수준: __, __, __)
+   - 종속변인 : ______ (측정 도구/단위: ______)
+   - 통제변인 : ______, ______, ______ (유지 방법: ______)
+   - 대조군   : ______
+4. 절차      : ① ______ ② ______ ③ ______ (각 조건 3회 반복)
+5. 결과      : [표] 조건 | 1회 | 2회 | 3회 | 평균   [그래프] x축(단위) / y축(단위)
+6. 분석      : ______할수록 ______ 경향 (기울기/평균 차이 ______)
+7. 결론      : 결과는 가설을 (지지/기각)한다. 그 이유는 ______.
+8. 오차·한계 : ① ______ ② ______   → 개선: ______</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 분야 탐색 -->
+<section id="fields">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">06 · 분야 탐색</span><h2>과제 과목별 세부 분야 &amp; 연구 주제 아이디어</h2><p>요강에 공개된 세부 분야와, 각 분야에서 중고생이 해볼 만한 주제 예시·공부 포인트입니다.</p></div></div>
+    <div class="chips" id="fchips"></div>
+    <input type="text" id="fsearch" placeholder="🔎 분야·키워드 검색 (예: 광학, 곤충, 로봇)" style="margin-bottom:14px">
+    <div class="grid g3" id="fgrid"></div>
+  </div>
+</section>
+
+<!-- 7. 연습문제 -->
+<section id="practice">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">07 · 연습문제</span><h2>탐구 기능 셀프 테스트</h2><p>KASTIC 과제 유형에 맞춘 연습 문항입니다(자체 제작, 기출 아님). 보기를 누르면 해설이 나와요.</p></div>
+      <div style="font-weight:800" id="qscore">0 / 0</div></div>
+    <div id="quiz"></div>
+
+    <h3 style="margin-top:26px">🧪 실험 설계 연습 — 직접 써 보고 모범답안과 비교</h3>
+    <div class="card">
+      <select id="dsel"></select>
+      <p id="dprob" style="margin-top:12px"></p>
+      <div class="grid g2">
+        <div><label class="f">가설</label><textarea id="d1"></textarea></div>
+        <div><label class="f">독립 / 종속 / 통제변인</label><textarea id="d2"></textarea></div>
+        <div><label class="f">절차</label><textarea id="d3"></textarea></div>
+        <div><label class="f">예상 결과와 결론</label><textarea id="d4"></textarea></div>
+      </div>
+      <button class="btn p" id="dshow" style="margin-top:12px">모범답안 보기</button>
+      <div class="note g" id="dans" style="display:none"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 수상작 자료 -->
+<section id="archive">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">08 · 기 수상자 자료 &amp; 보고서</span><h2>참고할 수상작·보고서·기출 자료실</h2><p>KASTIC은 2027년이 <b>제1회</b>라 아직 KASTIC 수상작은 없습니다. 대신 같은 성격의 대회 수상작과 보고서를 모았습니다.</p></div></div>
+
+    <div class="tabs" id="atabs">
+      <button class="on" data-t="a1">수상작 보고서 원문</button>
+      <button data-t="a2">국제대회·CASTIC</button>
+      <button data-t="a3">과제수행 연습 자료</button>
+      <button data-t="a4">공식 자료·양식</button>
+    </div>
+
+    <div class="pane on" id="a1">
+      <div class="grid g2">
+        <div class="res"><div class="ic">🏆</div><div><h4><a href="https://www.sciencechallenge.or.kr/result/paper.hsc" target="_blank" rel="noopener">한화 사이언스 챌린지 연도별 수상작</a></h4><p>고교생 2인 팀 수상작의 <b>연구결과서 PDF</b>를 연도별로 공개. 주제 선정·실험 설계·논문 구성의 최고 참고서.</p></div></div>
+        <div class="res"><div class="ic">🔬</div><div><h4><a href="https://ssei.sen.go.kr/fus/MI000000000000000074/board/BO00000126/ctgynone/list0010v.do" target="_blank" rel="noopener">서울특별시 과학전람회 입상작</a></h4><p>서울시교육청 융합과학교육원. 분야·수상등급·학교별 작품 목록과 보고서 열람.</p></div></div>
+        <div class="res"><div class="ic">🗂</div><div><h4><a href="https://www.data.go.kr/data/15135618/fileData.do" target="_blank" rel="noopener">국립중앙과학관 수상작정보 (공공데이터)</a></h4><p>전국과학전람회·학생과학발명품경진대회 수상작 약 970건의 주제·작품명·수상명 데이터. 주제 트렌드 분석용.</p></div></div>
+        <div class="res"><div class="ic">🏛</div><div><h4><a href="https://www.science.go.kr" target="_blank" rel="noopener">국립중앙과학관 (전국과학전람회)</a></h4><p>전국과학전람회 요강과 역대 수상작 정보.</p></div></div>
+        <div class="res"><div class="ic">🌏</div><div><h4><a href="https://abstracts.societyforscience.org" target="_blank" rel="noopener">Regeneron ISEF 프로젝트 초록 데이터베이스</a></h4><p>전 세계 고교생 국제대회 출품작 초록 검색. 카테고리별 우수 연구의 질문·방법을 볼 수 있음.</p></div></div>
+        <div class="res"><div class="ic">📘</div><div><h4>KSEF 학술지 International Journal of STEAM</h4><p>KSEF 수상 논문이 실리는 학술지(국립중앙도서관 방문 열람). <a href="http://www.ksef.or.kr/pc/notice/notice01.php" target="_blank" rel="noopener">공지사항</a>에서 투고 안내 확인.</p></div></div>
+      </div>
+      <h3 style="margin-top:22px">수상작 제목에서 배우는 “좋은 주제”의 공식</h3>
+      <div class="tbl"><table>
+        <tr><th>대회</th><th>수상</th><th>연구 주제</th><th>배울 점</th></tr>
+        <tr><td>한화 사이언스 챌린지</td><td>대상</td><td>봉선화 스냅 버클링 기반 무전원 산불 대응 및 복원 시스템</td><td>자연 현상(생체모방) → 사회문제(산불) 해결</td></tr>
+        <tr><td>한화 사이언스 챌린지</td><td>금상</td><td>괭생이모자반 기반 생분해성 겔 매트형 방화선 개발</td><td>지역 문제 자원(해조류)의 업사이클링</td></tr>
+        <tr><td>한화 사이언스 챌린지</td><td>동상</td><td>우주선 뮤온과 다중 센서를 융합한 저비용 적설수분당량 측정 시스템</td><td>고가 장비를 저비용 센서로 대체</td></tr>
+        <tr><td>한화 사이언스 챌린지</td><td>대상</td><td>Water-Activated Cell 기반 친환경 Activate-Deactivate Battery</td><td>명확한 성능 지표로 측정 가능</td></tr>
+        <tr><td>서울 과학전람회</td><td>장려</td><td>LiDAR 센서를 활용한 거리감응형 한글 LogMAR 시력표</td><td>스마트폰 센서 활용, 실생활 적용</td></tr>
+        <tr><td>서울 과학전람회</td><td>장려</td><td>Kelvin Water Dropper의 스파크 발생에 영향을 미치는 장치조건 탐구</td><td>고전 실험 + 변인을 체계적으로 바꿈</td></tr>
+      </table></div>
+      <p><small>※ 제목은 각 대회 공식 수상작 페이지에 공개된 내용입니다. 원문은 링크에서 직접 열람하세요.</small></p>
+    </div>
+
+    <div class="pane" id="a2">
+      <div class="grid g2">
+        <div class="res"><div class="ic">🇨🇳</div><div><h4><a href="https://www.cyscc.org" target="_blank" rel="noopener">CASTIC 공식 (中国科协青少年科技中心)</a></h4><p>전국청소년과학기술창신대회 주관 기관. 대회 공지와 결과.</p></div></div>
+        <div class="res"><div class="ic">📰</div><div><h4><a href="https://epaper.gmw.cn/gmrb/html/2025-08/20/nw.D110000gmrb_20250820_1-07.htm" target="_blank" rel="noopener">광명일보: CASTIC 2025 개편 해설</a></h4><p>개인 과제 7개·팀 과제 3개, 1·2·3등상 폐지, 상위 10% 中國科協主席獎 등 새 방식 설명.</p></div></div>
+        <div class="res"><div class="ic">📰</div><div><h4><a href="https://sj.cast.org.cn/xw/MTBD/art/2025/art_538680178.html" target="_blank" rel="noopener">중국과협: 제39회 대회 개최 보도</a></h4><p>2025년 후허하오터, 18개 국제대표팀 포함 약 700명 참가.</p></div></div>
+        <div class="res"><div class="ic">📰</div><div><h4><a href="https://www.news.cn/20260725/8480cfaace724aae834b75e171c80bb7/c.html" target="_blank" rel="noopener">신화망: 제40회(2026, 시안) 국제교류</a></h4><p>27개국 대표 참가, 국제 선수의 현장 팀 과제 첫 참여.</p></div></div>
+        <div class="res"><div class="ic">🇰🇷</div><div><h4><a href="http://www.ksef.or.kr/pc/fair/fair01.php" target="_blank" rel="noopener">KSEF 국제과학대회 소개</a></h4><p>CASTIC·ISEF·EUCYS·GENIUS·TISF 등 KSEF가 파견하는 대회 설명.</p></div></div>
+        <div class="res"><div class="ic">📄</div><div><h4><a href="https://en.wikipedia.org/wiki/China_Adolescents_Science_%26_Technology_Innovation_Contest" target="_blank" rel="noopener">CASTIC 위키백과</a></h4><p>대회 역사, 규모, 국제 참가 현황 개요.</p></div></div>
+      </div>
+      <div class="note" style="margin-top:14px"><b>CASTIC에 가게 되면?</b> 영어로 소통·발표해야 합니다(국제 참가자는 영어로 프로젝트를 설명). 선발 후 2~7월에는 ① 영문 논문·포스터 다듬기 ② 영어 질의응답 연습 ③ 팀 과제 협업 연습을 권장합니다.</div>
+    </div>
+
+    <div class="pane" id="a3">
+      <div class="note y">KASTIC 세부 분야(해부생리, 생태, 미생물, 질병, 곤충, 지질, 해양, 천문, 화석, 기상, 전자기, 광학, 화학실험, 범죄수사, 역학, 신재생에너지, 독약과 신약, 법의학, 항공, 전기자동차, 건축, 로봇)는 미국 <b>Science Olympiad</b> 종목과 매우 비슷합니다. 그 기출문제가 최고의 연습 자료입니다.</div>
+      <div class="grid g2">
+        <div class="res"><div class="ic">🧪</div><div><h4><a href="https://scioly.org/tests" target="_blank" rel="noopener">Scioly.org Test Exchange</a></h4><p>종목별 기출 시험지·답안 무료 공개(영문). Experimental Design, Crime Busters, Forensics, Anatomy, Meteorology 등.</p></div></div>
+        <div class="res"><div class="ic">📖</div><div><h4><a href="https://scioly.org/wiki" target="_blank" rel="noopener">Scioly Wiki</a></h4><p>종목별 개념 정리. 세부 분야 개념 카드 만들 때 활용.</p></div></div>
+        <div class="res"><div class="ic">🏫</div><div><h4><a href="https://www.soinc.org" target="_blank" rel="noopener">Science Olympiad 공식</a></h4><p>종목 규칙, Experimental Design 채점표(rubric) 등.</p></div></div>
+        <div class="res"><div class="ic">📊</div><div><h4><a href="https://imagej.net/ij/" target="_blank" rel="noopener">ImageJ</a> · <a href="https://www.geogebra.org" target="_blank" rel="noopener">GeoGebra</a></h4><p>이미지 데이터 처리·그래프 분석 연습 도구 (무료).</p></div></div>
+        <div class="res"><div class="ic">🌌</div><div><h4><a href="https://gwosc.org" target="_blank" rel="noopener">GWOSC 중력파 공개데이터</a></h4><p>CASTIC 기출 “잡음 속 중력파 신호” 대비 배경지식·튜토리얼.</p></div></div>
+        <div class="res"><div class="ic">🎓</div><div><h4><a href="https://phet.colorado.edu/ko/" target="_blank" rel="noopener">PhET 시뮬레이션 (한국어)</a></h4><p>물리·화학·지구과학 가상 실험으로 변인 통제·데이터 수집 연습.</p></div></div>
+        <div class="res"><div class="ic">📚</div><div><h4><a href="https://www.ebsi.co.kr" target="_blank" rel="noopener">EBS · 중학 과학 교과서</a></h4><p>출제 기준이 중학교 교육과정이므로 교과서 탐구 활동이 기본.</p></div></div>
+        <div class="res"><div class="ic">🧫</div><div><h4><a href="https://www.sciencechallenge.or.kr" target="_blank" rel="noopener">한화 사이언스 챌린지</a></h4><p>연구 아이디어·보고서 작성 연습에 좋은 수상작 자료.</p></div></div>
+      </div>
+    </div>
+
+    <div class="pane" id="a4">
+      <div class="grid g2">
+        <div class="res"><div class="ic">📣</div><div><h4><a href="http://www.ksef.or.kr/pc/notice/notice01.php" target="_blank" rel="noopener">[KSEF 2027] KASTIC 대회 안내 (공지사항)</a></h4><p>공지사항 목록에서 “KASTIC 대회 안내”를 열면 첨부 zip: 붙임1 대회요강(pdf) · 붙임2 개인정보 동의서(hwp/docx) · 붙임3 논문양식(hwp/docx)</p></div></div>
+        <div class="res"><div class="ic">📝</div><div><h4><a href="https://forms.gle/dD14j42sWrDDM5UP8" target="_blank" rel="noopener">KASTIC 참가 등록 폼</a></h4><p>접수 기간(2026.11.23 11:00 ~ 12.22 18:00)에만 열립니다.</p></div></div>
+        <div class="res"><div class="ic">🏠</div><div><h4><a href="http://www.ksef.or.kr" target="_blank" rel="noopener">KSEF 공식 홈페이지 ksef.or.kr</a></h4><p>KASTIC은 오직 ksef.or.kr 도메인으로만 운영됩니다. 유사 명칭 대회 주의.</p></div></div>
+        <div class="res"><div class="ic">✉️</div><div><h4>문의: ksef@ksef.or.kr · 041-577-5733</h4><p>전화 연결이 어려울 수 있어 메일 문의 권장 (분과·학교명·학생명 기재).</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. 점수 -->
+<section id="score">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">09 · 점수 시뮬레이터 &amp; 셀프 체크</span><h2>내 예상 점수와 논문 완성도 점검</h2><p>실제 점수가 아닌 연습용 추정입니다.</p></div></div>
+    <div class="score">
+      <div class="card">
+        <h3>🎯 총점 시뮬레이터 (300점)</h3>
+        <label class="f">과학프로젝트 서면심사 예상 <span id="s1v">70</span>/100</label><input type="range" id="s1" min="0" max="100" value="70">
+        <label class="f">과제 A 예상 <span id="s2v">60</span>/100</label><input type="range" id="s2" min="0" max="100" value="60">
+        <label class="f">과제 B 예상 <span id="s3v">60</span>/100</label><input type="range" id="s3" min="0" max="100" value="60">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-top:14px"><span class="gauge" id="stot">190</span><span>/ 300점</span></div>
+        <p id="smsg" style="color:var(--ink2)"></p>
+        <div class="note" style="margin-bottom:0">과제 점수 10점 올리기 = 프로젝트 점수 10점 올리기와 같은 효과지만, 과제는 <b>2개</b>라 영향이 두 배입니다. 동점이면 과제수행 점수가 높은 사람이 이깁니다.</div>
+      </div>
+      <div class="card">
+        <h3>✅ 논문·발표자료 셀프 체크 (KSEF 2027 심사기준 기반)</h3>
+        <div id="rubric"></div>
+        <div style="margin-top:10px;font-weight:800">체크 <span id="rpct">0</span>%</div>
+        <div class="bar"><i id="rbar"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-h"><div><span class="num">10 · FAQ</span><h2>자주 묻는 질문</h2></div></div>
+    <details class="faq"><summary>제출하는 과학프로젝트는 꼭 새로 만들어야 하나요?</summary><div>아니요. 참가학생이 연구한 자료면 되고, 다른 과학대회나 KSEF 국내/국제 대회에 냈던 작품도 출품할 수 있습니다(요강 Q&amp;A).</div></details>
+    <details class="faq"><summary>논문은 영어로 써야 하나요?</summary><div>국문 또는 영문 중 선택입니다. 다만 요약은 국문(500자)과 영문 Abstract(200단어)를 모두 쓰는 양식입니다. CASTIC에 선발되면 영어로 발표해야 하므로 여유가 있다면 영문 작성도 좋습니다.</div></details>
+    <details class="faq"><summary>발표자료는 포스터와 PPT 중 뭐가 유리한가요?</summary><div>규정상 차이는 없습니다(포스터 1장 또는 PPT 12장 이내). 서면심사라 설명 없이도 이해되는 쪽이 유리합니다. 실험 과정이 복잡하면 PPT, 결과가 한눈에 보이는 연구면 포스터를 추천합니다.</div></details>
+    <details class="faq"><summary>과제는 어떤 수준으로 나오나요?</summary><div>중학교 교육과정 기준이며, 탐구과정(프로젝트)을 수행해 본 학생이면 풀 수 있는 수준입니다. 4개 과목(생물/사회, 지구/우주, 물리/화학, 기술/공학)에서 1개씩 나오고 2개를 골라 120분간 수행합니다.</div></details>
+    <details class="faq"><summary>중3인데 참가할 수 있나요? 고3은요?</summary><div>2026학년도 기준 중3(G9)~고3(G12)이면 참가할 수 있습니다. 다만 CASTIC은 2027년 7~8월이므로 고3은 그때 졸업 후라는 점을 고려하세요.</div></details>
+    <details class="faq"><summary>해외 유학생·홈스쿨링도 되나요?</summary><div>한국 국적(이중국적 포함)이면 재학생·유학생·대안학교·홈스쿨링·검정고시·대입 준비생 모두 가능합니다. 본선은 대전 현장 참석입니다.</div></details>
+    <details class="faq"><summary>KSEF National과 KASTIC을 둘 다 하면?</summary><div>가능합니다. National 참가자는 KASTIC 등록 시 심사비 220,000원만 냅니다. National 본선은 1/9~10(현장 발표), KASTIC 본선은 1/16(현장 과제)입니다.</div></details>
+    <details class="faq"><summary>제출한 파일을 고치고 싶어요.</summary><div>제출 후 수정이 불가합니다. 폼을 다시 제출한 뒤 ksef@ksef.or.kr로 분과·학교명·학생명을 알리고 기존 접수자료 삭제를 요청해야 합니다.</div></details>
+    <details class="faq"><summary>본선에 늦으면?</summary><div>09:00~09:30에 등록을 마쳐야 하며, 대회 시작 후 도착하면 실격 처리됩니다.</div></details>
+    <details class="faq"><summary>대회에 불참하면 환불되나요?</summary><div>대회 불참 시 심사비만 환불 가능하다고 안내되어 있습니다. 세부 기준은 사무국에 문의하세요.</div></details>
+    <details class="faq"><summary>‘KASTIC’이라는 비슷한 이름의 다른 대회가 있던데요?</summary><div>주최 측은 KASTIC이 한국과학기술지원단(KSS)이 주최·주관하는 유일한 공식 대회이며 ksef.or.kr 도메인으로만 운영된다고 밝혔습니다. 유사 대회로 인한 피해는 책임지지 않으니 공식 채널을 확인하세요.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b style="color:#fff">KASTIC 2027 준비 가이드</b> · 정리 기준일 2026년 11월 10일<br>
+    출처: 한국과학기술지원단(KSS) [KSEF 2027] KASTIC 대회 안내 및 붙임1 대회요강·붙임3 논문양식, [KSEF 2027] National 대회요강, 2026 CASTIC 참가 신청 안내(ksef.or.kr), 광명일보·중국과협·신화망 CASTIC 보도, 한화 사이언스 챌린지·서울시교육청 융합과학교육원 수상작 페이지.<br>
+    이 사이트는 학생 준비를 돕기 위한 비공식 정리 자료입니다. 일정·비용·규정은 변경될 수 있으니 반드시 <a href="http://www.ksef.or.kr" target="_blank" rel="noopener">ksef.or.kr</a> 공식 공지를 최종 확인하세요.<br>
+    <span style="opacity:.7">제작: 다인에듀 · 후안샘</span>
+  </div>
+</footer>
+<button class="toTop" id="toTop" aria-label="맨 위로">↑</button>
+
+<script>
+(function(){
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const today=new Date(); const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+const D=(s)=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const fmt=d=>`${d.getFullYear()}.${d.getMonth()+1}.${d.getDate()}`;
+const diff=d=>Math.round((d-t0)/86400000);
+
+/* ---------- schedule ---------- */
+const EV=[
+ {d:'2026-09-18',t:'대회 공고',s:'ksef.or.kr 공지사항에 KASTIC 대회 안내·요강·양식 게시'},
+ {d:'2026-11-23',t:'참가 등록 시작 (11:00)',s:'구글폼 등록 오픈 · 동의서·논문·발표자료·납입증빙 업로드',key:'접수 시작'},
+ {d:'2026-12-22',t:'참가 등록 마감 (18:00)',s:'등록비 납부 포함 · 제출 후 수정 불가',key:'접수 마감'},
+ {d:'2027-01-05',t:'참가번호·세부일정 공지 (16:00)',s:'준비물·계산기 허용 여부 등 확인'},
+ {d:'2027-01-16',t:'본선 대회 (09:00~12:00)',s:'KT 대전인재개발원 제2연수관 2층 · 4과제 중 2개 선택 120분',key:'본선'},
+ {d:'2027-01-22',t:'결과 발표 (16:00)',s:'상위 4명 CASTIC 2027 한국대표 선발',key:'결과 발표'},
+ {d:'2027-02-13',t:'시상식 (10:30) · 국제대회 OT (14:00)',s:'시상식 후 같은 장소에서 국제과학대회 참가 OT'},
+ {d:'2027-07-01',t:'CASTIC 2027 (7~8월 중, 5박 6일)',s:'중국 후베이성 · 정확한 날짜는 추후 안내',approx:true}
+];
+let nextIdx=EV.findIndex(e=>D(e.d)>=t0);
+$('#timeline').innerHTML=EV.map((e,i)=>{const dd=D(e.d),n=diff(dd);const cls=n<0?'done':(i===nextIdx?'next':'');const lab=e.approx?'2027년 7~8월':fmt(dd);const badge=n<0?'<span class="tag">완료</span>':(n===0?'<span class="tag r">오늘</span>':`<span class="tag ${i===nextIdx?'r':''}">D-${n}</span>`);return `<div class="it ${cls}"><span class="date">${lab}</span> ${e.approx?'':badge}<div class="box"><b>${e.t}</b><br><small>${e.s}</small></div></div>`}).join('');
+
+const keys=EV.filter(e=>e.key);
+let html=`<div class="dd now"><div class="k">오늘</div><div class="v">${t0.getMonth()+1}월 ${t0.getDate()}일</div><div class="d">${['일','월','화','수','목','금','토'][t0.getDay()]}요일</div></div>`;
+html+=keys.map(e=>{const n=diff(D(e.d));return `<div class="dd"><div class="k">${e.key}</div><div class="v">${n>0?'D-'+n:(n===0?'D-DAY':'완료')}</div><div class="d">${fmt(D(e.d))}</div></div>`}).join('');
+$('#dday').innerHTML=html;
+
+$('#icsBtn').addEventListener('click',ev=>{ev.preventDefault();
+ const pad=n=>String(n).padStart(2,'0');
+ const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//KASTIC Guide//KO','CALSCALE:GREGORIAN'];
+ EV.filter(e=>!e.approx).forEach((e,i)=>{const d=D(e.d);const s=`${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`;const n=new Date(d);n.setDate(n.getDate()+1);const en=`${n.getFullYear()}${pad(n.getMonth()+1)}${pad(n.getDate())}`;
+  lines.push('BEGIN:VEVENT',`UID:kastic-${i}@guide`,`DTSTAMP:20261110T000000Z`,`DTSTART;VALUE=DATE:${s}`,`DTEND;VALUE=DATE:${en}`,`SUMMARY:[KASTIC] ${e.t}`,`DESCRIPTION:${e.s}`,'END:VEVENT')});
+ lines.push('END:VCALENDAR');
+ const blob=new Blob([lines.join('\r\n')],{type:'text/calendar'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='KASTIC2027.ics';a.click();});
+
+/* ---------- roadmap ---------- */
+const PH=[
+ {s:'2026-09-18',e:'2026-11-22',n:'0',t:'준비 시작 · 주제 확정',sub:'~ 11/22 (접수 전)',items:[
+  ['공식 공고 읽기','ksef.or.kr 공지사항 → [KSEF 2027] KASTIC 대회 안내'],
+  ['첨부 zip 내려받기','붙임1 요강(pdf), 붙임2 동의서, 붙임3 논문양식(hwp/docx)'],
+  ['참가 자격 확인','2026학년도 중3~고3, 한국 국적(이중국적 포함), 개인전'],
+  ['KSEF National 동시 지원 여부 결정','동시 지원 시 KASTIC 심사비만 22만원'],
+  ['과제 과목 4개 중 주력 2개 + 예비 1개 정하기','생물/사회 · 지구/우주 · 물리/화학 · 기술/공학'],
+  ['연구 주제 확정','기존 연구(R&E·과제연구·타 대회) 재활용 가능 / 신규면 측정 가능한 질문으로'],
+  ['지도교사(또는 멘토) 정하기','논문 검토·안전 지도 받을 사람'],
+  ['보호자와 일정·비용 상의','등록비 33만원, 본선 대전 이동, 선발 시 CASTIC 경비(2026년 기준 1인 300만원)']]},
+ {s:'2026-11-23',e:'2026-12-10',n:'1',t:'실험 마무리 · 논문 작성',sub:'11/23 ~ 12/10',items:[
+  ['실험 데이터 최종 수집','조건별 3회 이상 반복, 사진 촬영'],
+  ['표·그래프 완성','축 이름·단위·범례·오차막대'],
+  ['논문 초안 (붙임3 양식)','제목·저자·요약 500자·Abstract 200단어·Key Words 5개 알파벳순'],
+  ['본문 작성','서론-이론-방법-결과-고찰-결론, 10쪽 이내'],
+  ['참고문헌 정리','인용 순서대로, 양식 규칙 준수'],
+  ['발표자료 제작','포스터 1장 또는 PPT 12장 이내']]},
+ {s:'2026-12-11',e:'2026-12-22',n:'2',t:'검토 · 등록 · 제출',sub:'12/11 ~ 12/22 18:00',items:[
+  ['지도교사·친구에게 논문 읽혀 보기','“설명 없이 이해되는가?” 피드백'],
+  ['셀프 체크 80% 이상','이 사이트 09 섹션 체크리스트'],
+  ['동의서 작성·서명 후 jpg/png 변환','KASTIC_이름_동의서'],
+  ['논문·발표자료 PDF 변환 후 다른 기기에서 열어 확인','글꼴 깨짐·페이지 수 점검'],
+  ['등록비 33만원 입금 (입금자명 KASTIC+이름)','이체 화면 캡처 → KASTIC_이름_납입'],
+  ['구글폼 제출 (목표: 12/19 토)','마감 직전 접속 폭주 피하기'],
+  ['등록 확인 메일 수신 확인','스팸함까지 확인']]},
+ {s:'2026-12-23',e:'2027-01-15',n:'3',t:'과제수행 집중 대비',sub:'12/23 ~ 1/15 (3주)',items:[
+  ['5가지 과제 유형 해법 정리','실험설계·변인통제·데이터분석·가설·결론'],
+  ['답안 템플릿 외우기','05 섹션 답안 틀'],
+  ['연습문제·실험 설계 연습 모두 풀기','07 섹션'],
+  ['CASTIC 2025 기출 4개 개념 공부','어는점 내림, 로봇 부품, 이미지 처리, 신호와 잡음'],
+  ['Science Olympiad 기출 2세트 이상','Experimental Design 포함'],
+  ['120분 모의 실전 2회','과제 2개를 시간 재고 풀기'],
+  ['1/5(화) 16:00 참가번호·세부일정 확인','준비물·계산기 허용 여부'],
+  ['교통·숙소 확정','09:30 등록 마감, 지각 시 실격']]},
+ {s:'2027-01-16',e:'2027-01-16',n:'4',t:'본선 당일',sub:'1/16 (토) 09:00~12:00',items:[
+  ['신분증·필기구·시계 챙기기',''],
+  ['09:00~09:30 등록 완료','제2연수관 2층'],
+  ['과제 4개 훑고 2개 선택 (10분 이내)',''],
+  ['두 과제 모두 끝까지 답안 작성','단위·축 이름·이름 기재 확인']]},
+ {s:'2027-01-17',e:'2027-02-13',n:'5',t:'결과 · 시상식',sub:'1/22 결과 · 2/13 시상식·OT',items:[
+  ['1/22(금) 16:00 결과 확인','ksef.or.kr 공지'],
+  ['2/13(토) 10:30 시상식 참석','이후 14:00 국제과학대회 참가 OT'],
+  ['여권 유효기간 확인(선발자)','만료 6개월 이상 남았는지']]},
+ {s:'2027-02-14',e:'2027-08-31',n:'6',t:'CASTIC 2027 준비 (선발자)',sub:'2월 ~ 7·8월',items:[
+  ['국제대회 캠프 반드시 참가','불참 시 자격 제외 가능'],
+  ['영문 논문·포스터 다듬기','국제 심사는 영어로 진행'],
+  ['영어 질의응답 연습','예상 질문 30개 만들기'],
+  ['팀 과제 협업 연습','CASTIC은 개인 2종목 + 단체 1종목'],
+  ['중국 비자·출국 준비','안내에 따름']]}
+];
+let chk=store.get('kastic_chk',{});
+function curPhase(){for(let i=0;i<PH.length;i++){if(t0>=D(PH[i].s)&&t0<=D(PH[i].e))return i}return t0<D(PH[0].s)?0:-1}
+const cp=curPhase();
+function renderPhases(){
+ $('#phases').innerHTML=PH.map((p,i)=>{
+  const done=p.items.filter((_,j)=>chk[`${i}-${j}`]).length;const pct=Math.round(done/p.items.length*100);
+  return `<details class="phase ${i===cp?'cur':''}" ${i===cp||i===cp+1?'open':''}><summary><div class="pn">${p.n}</div><div class="pt"><b>${p.t} ${i===cp?'<span class="tag r">지금 단계</span>':''}</b><span>${p.sub}</span><div class="bar"><i style="width:${pct}%"></i></div></div><div class="pp">${done}/${p.items.length}</div></summary><div class="body">${p.items.map((it,j)=>`<div class="chk"><input type="checkbox" id="c${i}-${j}" data-k="${i}-${j}" ${chk[`${i}-${j}`]?'checked':''}><label for="c${i}-${j}"><b>${it[0]}</b>${it[1]?`<span>${it[1]}</span>`:''}</label></div>`).join('')}</div></details>`}).join('');
+ const total=PH.reduce((a,p)=>a+p.items.length,0);const d=Object.values(chk).filter(Boolean).length;const pct=Math.round(d/total*100);
+ $('#allPct').textContent=pct+'% ('+d+'/'+total+')';$('#allBar').style.width=pct+'%';
+}
+renderPhases();
+$('#phases').addEventListener('change',e=>{if(e.target.dataset.k){chk[e.target.dataset.k]=e.target.checked;store.set('kastic_chk',chk);
+  const openSet=$$('#phases details').map(d=>d.open);renderPhases();$$('#phases details').forEach((d,i)=>d.open=openSet[i]);}});
+$('#resetChk').addEventListener('click',()=>{if(confirm('체크리스트를 모두 초기화할까요?')){chk={};store.set('kastic_chk',chk);renderPhases();}});
+
+/* ---------- paper generator ---------- */
+$('#genBtn').addEventListener('click',()=>{
+ const v=id=>($('#'+id).value||'').trim();const [nm,sc]=(v('pName')||'홍길동 / 한국고등학교').split('/').map(s=>s.trim());
+ const kw=(v('pKW')||'keyword1, keyword2').split(',').map(s=>s.trim()).filter(Boolean).slice(0,5).sort((a,b)=>a.toLowerCase().localeCompare(b.toLowerCase()));
+ const IV=v('pIV')||'[독립변인]',DV=v('pDV')||'[종속변인]',CV=v('pCV')||'[통제변인]',WHY=v('pWhy')||'[과학적 근거]';
+ $('#pOut').textContent=
+`${v('pTitle')||'[국문 제목]'}                  ← 명조 14pt 진하게 가운데
+${nm}1*                                ← 돋움 10pt 가운데
+1${sc||'[학교명]'}
+
+${v('pTitleEn')||'[English Title]'}       ← 명조 14pt 진하게 가운데
+[English Name]1*
+1[School Name], [City], Korea
+
+요 약  본 연구는 ${IV}에 따른 ${DV}의 변화를 알아보기 위해 수행되었다. ${CV}을(를) 일정하게 유지한 채 실험한 결과, [핵심 결과를 숫자로]. 이는 ${WHY}로 설명할 수 있다. 본 연구는 [의의/활용]에 기여할 수 있다.   ← 명조 9pt, 8줄 또는 500자 이내
+
+Abstract  This study investigated the effect of [IV] on [DV]. ... (200 words max)
+
+Key Words : ${kw.join(', ')}   ← 5개 이내, 알파벳 순
+
+Ⅰ. 서론
+  1. 연구 동기 — 이 주제에 관심을 갖게 된 계기
+  2. 선행연구 고찰 — 알려진 것 / 아직 모르는 것 (참고문헌 [1],[2]...)
+  3. 연구 목적 — ${IV}에 따른 ${DV}의 변화를 정량적으로 규명
+  4. 연구 가설 — 만약 ${IV}을(를) 변화시키면 ${DV}이(가) [증가/감소]할 것이다.
+                 왜냐하면 ${WHY} 때문이다.
+
+Ⅱ. 이론적 배경
+  1. [핵심 개념 1]
+  2. [핵심 개념 2]
+
+Ⅲ. 연구 방법
+  1. 실험 재료 및 장치 (사진/모식도 그림 1)
+  2. 변인 설정
+     - 독립변인 : ${IV}
+     - 종속변인 : ${DV}
+     - 통제변인 : ${CV}
+     - 대조군   : [기준 조건]
+  3. 실험 절차 ① ... ② ... ③ ... (각 조건 3회 이상 반복)
+  4. 분석 방법 — 평균, 표준편차, [t-검정/상관분석]
+
+Ⅳ. 연구 결과
+  표 1. ${IV}에 따른 ${DV} (평균 ± 표준편차)
+  그림 2. ${IV}–${DV} 그래프 (축 이름·단위·오차막대)
+
+Ⅴ. 고찰
+  1. 결과 해석 — 가설을 지지/기각하는 근거
+  2. 예상과 다른 결과의 원인
+  3. 연구의 한계 및 오차 요인
+  4. 개선 방향 및 후속 연구
+
+Ⅵ. 결론
+  - 핵심 결과 3줄 요약, 기대 효과 및 활용 방안
+
+참고문헌 (본문 인용 순서대로)
+  [1] 저자, 표제, 학술지명, 권, 호, 쪽수, 발행연도.
+  [2] 저자, 서명, 쪽수, 발행소, 발행연도.
+  [3] 저자, 웹사이트 인용제목, 출판사, 출판연도, 주소, 인용연월.
+
+※ 전체 10페이지 이내 · PDF 파일명: KASTIC_${nm}_논문`;
+});
+$('#copyBtn').addEventListener('click',()=>{const t=$('#pOut').textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>alert('복사했습니다. 한글/워드 양식에 붙여 넣으세요.')).catch(()=>{const r=document.createRange();r.selectNodeContents($('#pOut'));const s=getSelection();s.removeAllRanges();s.addRange(r);});});
+
+/* ---------- tabs ---------- */
+function tabs(id){$$('#'+id+' button').forEach(b=>b.addEventListener('click',()=>{$$('#'+id+' button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const sec=b.closest('section');sec.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id===b.dataset.t));}))}
+tabs('ttabs');tabs('atabs');
+
+/* ---------- fields ---------- */
+const F=[
+ {c:'생물/사회',k:'해부학 및 생리학',e:'Anatomy and Physiology',st:['소화·순환·호흡·배설 기관의 구조와 기능','심박수·혈압 측정과 해석','신경계 반응 시간'],id:['운동 강도에 따른 심박수 회복 시간 비교','음악 템포가 반응 속도에 주는 영향','자세(앉기/서기)에 따른 폐활량 차이']},
+ {c:'생물/사회',k:'생태학',e:'Ecology',st:['먹이그물·에너지 흐름','개체군 조사(방형구법)','생물 다양성 지수'],id:['학교 화단과 공원의 토양 소형 절지동물 다양성 비교','도시 열섬과 식물 개화 시기','하천 수질과 저서생물 지표']},
+ {c:'생물/사회',k:'미생물학',e:'Microbiology',st:['세균·곰팡이 배양과 무균 조작','항균 효과 측정(억제환)','발효'],id:['천연 추출물(마늘·계피·녹차)의 항균 억제환 비교','손 세정 방법별 세균 감소율','김치 발효 온도와 pH 변화']},
+ {c:'생물/사회',k:'질병학',e:'Pathology (Disease Detectives)',st:['감염 경로·역학 조사','발병률·유병률 계산','표본·대조군 해석'],id:['교내 감기 유행과 환기 횟수 관계 조사','손잡이 표면 재질별 세균 생존 시간','가상 집단발병 데이터로 원인 추적']},
+ {c:'생물/사회',k:'곤충학',e:'Entomology',st:['곤충의 분류·변태','곤충 행동(주광성·화학 신호)','표본 관찰'],id:['빛의 파장(색)에 따른 날벌레 유인 효과','개미의 먹이 선호도와 경로 형성','천연 기피제의 모기 기피 효과']},
+ {c:'생물/사회',k:'기타 생물·사회과학',e:'Biology & Social Science',st:['설문 설계·표본 수','상관 vs 인과','심리 실험 윤리'],id:['수면 시간과 기억 과제 점수의 상관','글자 색과 단어 읽기 속도(스트룹 효과)','급식 메뉴 배치와 잔반량']},
+ {c:'지구/우주',k:'지질학',e:'Geology',st:['암석·광물 판별(경도·조흔색)','지층·풍화·침식','지진파'],id:['산성비 농도에 따른 석회암 풍화 속도','모래 입자 크기와 투수율','경사각과 사면 붕괴 모형 실험']},
+ {c:'지구/우주',k:'해양학',e:'Oceanography',st:['염분·수온·밀도','해류·조석','해양 산성화'],id:['염분과 온도에 따른 밀도류 형성','CO₂ 농도와 조개껍데기 용해','해안 방파 구조물 형태와 파랑 에너지 감쇠']},
+ {c:'지구/우주',k:'천문학',e:'Astronomy',st:['별의 밝기·색·거리','행성 운동(케플러 법칙)','태양 흑점'],id:['스마트폰으로 달 위상별 밝기 측정','흑점 관측으로 태양 자전 주기 구하기','광공해 정도와 관측 가능 별 개수']},
+ {c:'지구/우주',k:'화석',e:'Fossils',st:['화석 형성 조건','시상화석·표준화석','상대 연령'],id:['퇴적물 종류에 따른 흔적 화석 보존 모형','지층 모형으로 상대 연대 추론','발자국 간격으로 공룡 속도 추정']},
+ {c:'지구/우주',k:'기상학',e:'Meteorology',st:['기압·바람·습도','구름 생성(단열 팽창)','일기도 해석'],id:['자작 습도계 정확도 검증','지표면 재질별 온도와 열섬','기상청 자료로 미세먼지와 풍속 관계 분석']},
+ {c:'지구/우주',k:'기타 지구·우주과학',e:'Earth & Space',st:['신호와 잡음(SNR)','시계열 데이터','중력파·우주선'],id:['이동평균으로 잡음 속 신호 복원','스마트폰 가속도계로 진동 측정','우주선 뮤온 검출기 자작']},
+ {c:'물리/화학',k:'전자기학',e:'Electromagnetism',st:['옴의 법칙·직병렬','전자기 유도','자기장'],id:['코일 감은 수와 유도 전류','과일 전지 전극 재료별 전압','전자석 철심 재질별 세기']},
+ {c:'물리/화학',k:'광학',e:'Optics',st:['반사·굴절·렌즈 공식','빛의 분산·편광','스펙트럼'],id:['설탕물 농도와 굴절률','편광 필름으로 응력 분포 보기','스마트폰 분광기로 광원 스펙트럼 비교']},
+ {c:'물리/화학',k:'역학',e:'Mechanics',st:['운동 법칙·에너지 보존','마찰·탄성','진자 운동'],id:['공 재질별 반발계수','경사면 재질별 마찰계수','진자 길이와 주기']},
+ {c:'물리/화학',k:'신재생에너지',e:'New and Renewable Energy',st:['태양전지 효율','풍력 블레이드','열전 소자'],id:['태양전지 각도·온도별 출력','블레이드 개수·각도별 풍력 발전량','온도차 발전(펠티어) 효율']},
+ {c:'물리/화학',k:'화학실험',e:'Chem Lab',st:['반응 속도(온도·농도·촉매)','산염기·지시약','용해도·어는점 내림'],id:['소금 농도별 어는점 내림 (CASTIC 기출 연계)','천연 지시약(적양배추)으로 pH 측정','촉매 종류별 과산화수소 분해 속도']},
+ {c:'물리/화학',k:'범죄수사',e:'Crime Busters',st:['미지 물질 판별(용해·불꽃·pH)','크로마토그래피','지문·섬유 분석'],id:['펜 잉크 종이 크로마토그래피로 필기구 식별','가루 물질 판별 플로차트 만들기','섬유 연소 반응 비교']},
+ {c:'물리/화학',k:'독약과 신약',e:'Poison and New Drug',st:['농도·용량-반응 곡선','해독·중화 원리','약물 흡수'],id:['제산제 종류별 중화 능력 비교','비타민 C 정량(아이오딘 적정)','물벼룩/새싹 대상 염분 독성 곡선']},
+ {c:'물리/화학',k:'법의학',e:'Forensics',st:['혈흔·지문·DNA 원리','증거 간 교차 확인','추론 보고서'],id:['낙하 높이와 혈흔(물감) 지름 관계','표면 재질별 지문 채취 효율','가상 사건 증거로 용의자 추론']},
+ {c:'기술/공학',k:'항공학',e:'Aeronautics',st:['양력·항력·받음각','날개 형상','글라이더 안정성'],id:['종이비행기 날개 면적과 체공 시간','받음각과 양력(풍동 자작)','윙렛 유무에 따른 비행 거리']},
+ {c:'기술/공학',k:'전기 자동차',e:'Electric Vehicle',st:['모터·기어비','배터리 용량·효율','에너지 회수'],id:['기어비와 주행 속도·거리','바퀴 크기별 효율','회생 제동 모형']},
+ {c:'기술/공학',k:'건축학',e:'Architecture',st:['구조 역학(트러스·아치)','하중 분산','단열·환기'],id:['트러스 형태별 다리 하중 효율','벽 재료별 단열 성능','지붕 형태별 빗물·열 흡수']},
+ {c:'기술/공학',k:'로봇공학',e:'Robot',st:['센서-제어-구동','아두이노·코딩','피드백 제어'],id:['라인트레이서 센서 간격 최적화','초음파 센서 장애물 회피 정확도','그리퍼 형태별 집기 성공률 (EI 로봇 기출 연계)']},
+ {c:'기술/공학',k:'기타 기술·공학',e:'Tech & Engineering',st:['이미지 데이터 처리','설계-제작-테스트 사이클','유연 전자'],id:['ImageJ로 잎 기공 개수 자동 측정','전도성 실로 빛나는 직물 회로 (CASTIC 2025 연계)','산악 지역용 저전력 운반장치 모형']}
+];
+const cats=['전체','생물/사회','지구/우주','물리/화학','기술/공학'];let cur='전체';
+$('#fchips').innerHTML=cats.map(c=>`<button class="${c===cur?'on':''}" data-c="${c}">${c}</button>`).join('');
+function rf(){const q=$('#fsearch').value.trim();$('#fgrid').innerHTML=F.filter(f=>(cur==='전체'||f.c===cur)&&(!q||(f.k+f.e+f.st.join()+f.id.join()).toLowerCase().includes(q.toLowerCase()))).map(f=>`<div class="fcard"><span class="tag">${f.c}</span><h4>${f.k}</h4><div class="en">${f.e}</div><b style="font-size:.85rem;display:block;margin-top:8px">📘 공부할 개념</b><ul>${f.st.map(s=>`<li>${s}</li>`).join('')}</ul><b style="font-size:.85rem;display:block;margin-top:8px">💡 연구 주제 아이디어</b><ul>${f.id.map(s=>`<li>${s}</li>`).join('')}</ul></div>`).join('')||'<p>검색 결과가 없습니다.</p>'}
+$('#fchips').addEventListener('click',e=>{if(e.target.dataset.c){cur=e.target.dataset.c;$$('#fchips button').forEach(b=>b.classList.toggle('on',b.dataset.c===cur));rf();}});
+$('#fsearch').addEventListener('input',rf);rf();
+
+/* ---------- quiz ---------- */
+const Q=[
+ {t:'변인 통제',q:'민지는 “물의 온도가 높을수록 설탕이 빨리 녹는다”를 확인하려고 20℃ 물 100mL에는 각설탕을, 60℃ 물 200mL에는 가루 설탕을 넣었다. 이 실험의 가장 큰 문제는?',o:['온도를 두 단계만 했다','물의 양과 설탕 형태까지 함께 바뀌었다','설탕 종류를 표시하지 않았다','시간을 초 단위로 쟀다'],a:1,e:'독립변인(온도) 외에 물의 양·설탕 입자 크기가 함께 바뀌어 어떤 요인 때문인지 알 수 없습니다. 통제변인을 같게 해야 합니다.'},
+ {t:'가설 설정',q:'다음 중 “검증 가능한” 가설로 가장 적절한 것은?',o:['식물은 음악을 좋아할 것이다','클래식 음악은 식물에게 좋다','하루 3시간 음악을 들려준 강낭콩은 들려주지 않은 강낭콩보다 2주 후 줄기 길이가 길 것이다','음악은 생명에 영향을 준다'],a:2,e:'조건(하루 3시간)과 측정값(2주 후 줄기 길이), 비교 대상이 명확해야 검증할 수 있습니다.'},
+ {t:'데이터 분석',q:'추의 질량(g) 10, 20, 30, 40에 대해 용수철 늘어난 길이(cm)가 2.0, 4.1, 5.9, 8.0이었다. 50g일 때 예상 길이는?',o:['약 9 cm','약 10 cm','약 12 cm','알 수 없다'],a:1,e:'10g당 약 2cm씩 늘어나는 비례 관계(기울기 0.2 cm/g)이므로 50g → 약 10cm. 탄성 한계 안이라는 가정이 필요합니다.'},
+ {t:'데이터 분석',q:'아이스크림 판매량과 물놀이 사고 건수가 강한 양의 상관관계를 보였다. 가장 타당한 해석은?',o:['아이스크림이 사고를 일으킨다','사고가 나면 아이스크림을 많이 산다','기온이라는 제3의 변인이 둘 다 증가시킬 수 있다','두 데이터는 아무 관계가 없다'],a:2,e:'상관관계는 인과관계가 아닙니다. 공통 원인(교란변인)인 기온을 먼저 의심해야 합니다.'},
+ {t:'실험 설계',q:'소금이 얼음의 온도를 얼마나 낮추는지 알아보는 실험에서 반드시 필요한 대조군은?',o:['소금 대신 설탕을 넣은 얼음','소금을 넣지 않은 같은 양의 얼음','더 큰 그릇에 담은 얼음','냉동실에 넣은 얼음'],a:1,e:'독립변인(소금)만 빠진 조건이 대조군입니다. 설탕은 “다른 용질 비교”라는 추가 실험군입니다.'},
+ {t:'결론 도출',q:'3회 반복 실험 중 1회만 예상과 크게 달랐다. 가장 바람직한 처리는?',o:['그 값을 지우고 평균을 낸다','그대로 기록하고, 원인을 검토한 뒤 추가 반복 실험을 한다','예상값으로 고쳐 적는다','실험 전체를 무효로 한다'],a:1,e:'정직한 기록이 과학 태도 평가의 핵심입니다. 이상값은 기록하고 원인(측정 실수 등)을 밝힌 뒤 반복으로 확인합니다.'},
+ {t:'데이터 분석',q:'그래프를 그릴 때 x축에 두어야 하는 것은?',o:['종속변인','독립변인','통제변인','측정 횟수'],a:1,e:'x축=독립변인(내가 바꾼 것), y축=종속변인(측정한 것). 축 이름과 단위를 꼭 씁니다.'},
+ {t:'과학 내용',q:'바닷물이 강물보다 늦게 어는 주된 이유는?',o:['바닷물이 더 깊어서','용질이 녹아 있어 어는점이 낮아지기 때문','바닷물의 비열이 0이라서','바닷물은 항상 움직여서'],a:1,e:'용질이 녹아 있으면 어는점이 내려갑니다(어는점 내림). CASTIC 2025 “소금물 냉각” 과제의 핵심 개념입니다.'},
+ {t:'데이터 분석',q:'잡음이 많은 신호에서 같은 측정을 100번 반복해 평균을 내면 일반적으로?',o:['신호와 잡음 모두 커진다','무작위 잡음이 줄어 신호가 더 잘 보인다','신호가 사라진다','변화 없다'],a:1,e:'무작위 잡음은 평균을 내면 상쇄되어 신호 대 잡음비(SNR)가 좋아집니다. 중력파 기출 과제와 연결됩니다.'},
+ {t:'실험 설계',q:'측정 정밀도를 높이기 위한 방법으로 가장 적절하지 않은 것은?',o:['같은 조건에서 반복 측정한다','눈금을 눈높이에서 읽는다','조건마다 다른 측정 도구를 쓴다','측정 전 영점을 맞춘다'],a:2,e:'조건마다 도구가 다르면 도구 차이가 새로운 변인이 됩니다. 같은 도구를 사용해야 합니다.'},
+ {t:'기술/공학',q:'모터 쪽 기어 톱니 10개, 바퀴 쪽 기어 톱니 30개일 때 바퀴의 회전은?',o:['3배 빠르고 힘은 1/3','1/3 속도이고 회전력은 약 3배','속도·힘 모두 같다','3배 빠르고 힘도 3배'],a:1,e:'기어비 3:1 감속 → 회전 속도 1/3, 토크 약 3배(마찰 무시). 로봇·전기자동차 과제의 기본입니다.'},
+ {t:'생물/사회',q:'설문조사로 “스마트폰 사용 시간과 수면의 질”을 연구할 때 결과의 신뢰도를 가장 높이는 방법은?',o:['친한 친구 10명에게만 묻는다','표본 수를 늘리고 다양한 집단에서 무작위로 뽑는다','원하는 답이 나오게 질문을 바꾼다','응답이 이상한 사람을 모두 뺀다'],a:1,e:'충분하고 대표성 있는 표본, 중립적인 질문이 사회과학 연구 신뢰도의 핵심입니다.'}
+];
+let qs=store.get('kastic_quiz',{});
+function rq(){$('#quiz').innerHTML=Q.map((x,i)=>{const s=qs[i];return `<div class="q ${s!==undefined?'ans':''}" data-i="${i}"><span class="tag r">${x.t}</span><div class="qt">Q${i+1}. ${x.q}</div><div class="opts">${x.o.map((o,j)=>`<button data-j="${j}" class="${s!==undefined?(j===x.a?'right':(j===s?'wrong':'')):''}">${String.fromCharCode(9312+j)} ${o}</button>`).join('')}</div><div class="exp">${s===x.a?'⭕ 정답! ':'❌ 정답은 '+String.fromCharCode(9312+x.a)+'. '}${x.e}</div></div>`}).join('')+'<button class="btn o sm" id="qreset">문제 다시 풀기</button>';
+ const ans=Object.keys(qs).length,ok=Object.entries(qs).filter(([i,v])=>Q[i].a===v).length;$('#qscore').textContent=`정답 ${ok} / 푼 문제 ${ans} / 전체 ${Q.length}`;
+ $('#qreset').onclick=()=>{qs={};store.set('kastic_quiz',qs);rq();};}
+$('#quiz').addEventListener('click',e=>{const b=e.target.closest('button[data-j]');if(!b)return;const i=+b.closest('.q').dataset.i;if(qs[i]!==undefined)return;qs[i]=+b.dataset.j;store.set('kastic_quiz',qs);rq();});
+rq();
+
+/* ---------- design practice ---------- */
+const DP=[
+ {t:'① 소금물 냉각 (물리/화학)',p:'재료: 얼음, 소금, 전자저울, 온도계 3개, 같은 종이컵 여러 개, 스톱워치. 질문: “얼음에 넣는 소금의 양은 얼음물이 도달하는 최저 온도에 어떤 영향을 주는가?” 실험을 설계하시오.',a:'<b>가설</b> 소금의 양이 많을수록 최저 온도는 더 낮아질 것이다(어는점 내림). 단, 일정 양 이상에서는 포화되어 변화가 작아질 것이다.<br><b>변인</b> 독립: 소금 질량 0, 5, 10, 15, 20 g / 종속: 5분간 최저 온도(℃) / 통제: 얼음 질량(100 g), 컵 종류, 실내 온도, 젓는 횟수·시간, 온도계 위치 / 대조군: 소금 0 g<br><b>절차</b> ① 얼음 100 g을 컵에 담는다 ② 소금을 넣고 10초간 같은 방식으로 젓는다 ③ 30초마다 5분간 온도 기록 ④ 각 조건 3회 반복, 평균·범위 계산<br><b>결론</b> 소금 질량–최저 온도 그래프에서 감소 경향이면 가설 지지. 오차: 온도계 반응 지연, 녹는 속도 차이 → 개선: 단열 용기 사용, 디지털 온도계.'},
+ {t:'② 진자 주기 (물리)',p:'재료: 실, 추(10 g, 20 g, 50 g), 스탠드, 자, 각도기, 스톱워치. 질문: “진자의 주기를 결정하는 요인은 무엇인가?” 한 가지 요인을 골라 실험을 설계하시오.',a:'<b>가설</b> 실의 길이가 길수록 주기가 길어질 것이다(T = 2π√(L/g)). 추의 질량은 주기에 영향을 주지 않을 것이다.<br><b>변인</b> 독립: 실 길이 20, 40, 60, 80 cm / 종속: 주기(10회 왕복 시간 ÷ 10) / 통제: 추 질량, 진폭(10° 이하), 공기 흐름<br><b>절차</b> ① 길이를 맞춰 매단다 ② 10°로 당겨 놓는다 ③ 10회 왕복 시간 측정 ④ 3회 반복 평균<br><b>결론</b> T²–L 그래프가 직선이면 이론과 일치. 오차: 반응 시간 → 10회 묶어 측정해 줄임.'},
+ {t:'③ 천연 항균 (생물)',p:'재료: 마늘·생강·계피 추출액, 멸균 종이 디스크, 세균 배양 평판(교사 준비), 자. 질문: “어떤 천연 추출물이 세균 생장 억제 효과가 가장 큰가?”',a:'<b>가설</b> 알리신을 포함한 마늘 추출액의 억제환 지름이 가장 클 것이다.<br><b>변인</b> 독립: 추출물 종류(+멸균수 대조군) / 종속: 억제환 지름(mm) / 통제: 추출 농도·양(디스크당 20 μL), 배양 온도·시간(37℃, 24 h), 평판 종류 / 대조군: 멸균수 디스크<br><b>절차</b> ① 디스크에 각 추출액 적신다 ② 평판 같은 간격에 놓는다 ③ 24시간 배양 ④ 억제환 지름 2방향 측정 평균, 평판 3개 반복<br><b>결론</b> 평균 비교 막대그래프 + 오차막대. 안전: 배양 후 고압멸균 폐기, 교사 지도 필수.'},
+ {t:'④ 잡음 속 신호 찾기 (지구/우주·데이터)',p:'자료: 1초 간격 300개 측정값 그래프. 대부분 무작위 잡음이고 어딘가에 아주 약한 주기 신호가 숨어 있다고 한다. 신호의 존재와 위치를 찾는 방법을 설계하시오.',a:'<b>가설</b> 잡음은 무작위라 평균하면 줄고, 신호는 일정한 모양이라 평균해도 남을 것이다.<br><b>방법</b> ① 이동평균(5~11점)으로 고주파 잡음 제거 ② 예상 신호 모양(템플릿)과 구간별로 곱해 합한 값(상관)을 계산 → 최댓값 위치가 신호 후보 ③ 신호 없는 구간의 상관값 분포와 비교해 “우연히 나올 확률” 판단(SNR)<br><b>결론</b> 후보 위치에서 상관값이 잡음 구간 평균보다 표준편차의 3배 이상 크면 신호로 판정. 한계: 이동평균 창이 크면 신호도 뭉개짐.'}
+];
+$('#dsel').innerHTML=DP.map((d,i)=>`<option value="${i}">${d.t}</option>`).join('');
+function rd(){const d=DP[+$('#dsel').value];$('#dprob').innerHTML='<b>문제</b> '+d.p;$('#dans').style.display='none';$('#dans').innerHTML=d.a;['d1','d2','d3','d4'].forEach(x=>$('#'+x).value='');}
+$('#dsel').addEventListener('change',rd);$('#dshow').addEventListener('click',()=>{$('#dans').style.display='block'});rd();
+
+/* ---------- score ---------- */
+function sc(){const a=+$('#s1').value,b=+$('#s2').value,c=+$('#s3').value;$('#s1v').textContent=a;$('#s2v').textContent=b;$('#s3v').textContent=c;const t=a+b+c;$('#stot').textContent=t;
+ const weak=b+c<a*2?'과제수행 점수를 올리는 것이 순위에 더 효과적입니다. 05·07 섹션을 집중 공략하세요.':'과제수행은 강점! 논문 완성도(09 셀프 체크)도 끌어올려 안정적으로 만드세요.';
+ $('#smsg').textContent=(t>=240?'최상위권 도전 가능 구간입니다. ':t>=180?'상위권 진입을 노려볼 구간입니다. ':'기본기를 다질 구간입니다. ')+weak;}
+['s1','s2','s3'].forEach(id=>$('#'+id).addEventListener('input',sc));sc();
+const R=[
+ ['주제 선정','연구 주제가 창의적이고 목적이 분명하다'],['주제 선정','해결할 문제가 실제로 필요하고, 과학적 방법으로 해결 가능하다'],['주제 선정','문제의 제약 조건을 설명했다'],
+ ['설계·방법론','변인(독립·종속·통제)을 명확히 정의했다'],['설계·방법론','실험 계획이 체계적이고 여러 해결방안을 비교했다'],['설계·방법론','설계 과정의 문제 요인을 인지하고 반영했다'],
+ ['연구 실행','데이터 수집·분석이 체계적이다 (반복·평균·오차)'],['연구 실행','제3자가 재현할 수 있도록 절차를 썼다'],['연구 실행','수학·통계 방법으로 결론을 뒷받침했다'],['연구 실행','시제품이 있다면 여러 조건에서 테스트했다'],
+ ['자료 제작','발표자료가 논리적으로 구성되어 있다'],['자료 제작','표·그래프의 범례·축·단위가 명확하다'],['자료 제작','참고문헌을 양식대로 적절히 표기했다'],
+ ['연구 전달','결과의 한계와 보완 방향을 제시했다'],['연구 전달','과학·사회·경제적 영향력을 설명했다'],['연구 전달','관련 기초 과학을 충분히 이해하고 설명했다'],['연구 전달','본인이 독립적으로 연구했음이 드러난다'],
+ ['형식','KASTIC 논문양식(서체·요약 500자·Abstract 200단어·Key Words 5개 알파벳순)을 지켰다'],['형식','논문 10쪽 이내, 발표자료 포스터 1장/PPT 12장 이내, PDF·파일명 규칙 준수']
+];
+let rs=store.get('kastic_rubric',{});
+function rr(){let last='';$('#rubric').innerHTML=R.map((r,i)=>{const h=r[0]!==last?`<div style="font-weight:800;color:var(--pri);margin-top:8px">${r[0]}</div>`:'';last=r[0];return h+`<div class="chk"><input type="checkbox" id="r${i}" data-r="${i}" ${rs[i]?'checked':''}><label for="r${i}"><b style="font-weight:600">${r[1]}</b></label></div>`}).join('');
+ const p=Math.round(Object.values(rs).filter(Boolean).length/R.length*100);$('#rpct').textContent=p;$('#rbar').style.width=p+'%';}
+$('#rubric').addEventListener('change',e=>{if(e.target.dataset.r!==undefined){rs[e.target.dataset.r]=e.target.checked;store.set('kastic_rubric',rs);rr();}});rr();
+
+/* ---------- nav ---------- */
+const secs=$$('section[id]');const links=$$('#menu a');
+window.addEventListener('scroll',()=>{let id='';secs.forEach(s=>{if(scrollY>=s.offsetTop-90)id=s.id});links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));$('#toTop').style.display=scrollY>600?'block':'none';},{passive:true});
+$('#toTop').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+})();
+</script>
+</body>
+</html>
